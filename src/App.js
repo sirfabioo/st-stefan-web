@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./styles/theme.css";
 import Blog from "./pages/Blog";
 import Teachers from "./pages/Teachers";
 import Gallery from "./pages/Gallery";
@@ -12,12 +13,13 @@ import Admin from "./pages/Admin";
 import GalleryUpload from "./pages/GalleryUpload.js";
 import ClassOverview from "./pages/ClassOverview.js";
 import AdminClasses from "./pages/AdminClasses.js";
+import Welcome from "./pages/Welcome.js";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<BlogOverview />} />
+        <Route path="/" element={<Welcome />} />
         <Route path="/teachers" element={<Teachers />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/school-info" element={<SchoolInfo />} />

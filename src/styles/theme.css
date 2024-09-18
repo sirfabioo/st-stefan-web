@@ -5,6 +5,7 @@
 
 /* Define CSS Variables */
 :root {
+  /* Updated Color Palette */
   --alloy-orange: #ca6411ff;
   --penn-red: #9d1006ff;
   --silver: #c9c9c9ff;
@@ -34,42 +35,42 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; /* Ensure headlines are bold */
 }
 
-/* Renamed Custom Utility Classes */
-.bg-custom-primary {
+/* Utility Classes */
+.bg-primary {
   background-color: var(--primary-color);
 }
 
-.bg-custom-secondary {
+.bg-secondary {
   background-color: var(--secondary-color);
 }
 
-.text-custom-primary {
+.text-primary {
   color: var(--primary-color);
 }
 
-.text-custom-secondary {
+.text-secondary {
   color: var(--secondary-color);
 }
 
-.text-custom-gray {
+.text-gray {
   color: var(--light-gray);
 }
 
-.text-custom-dark-gray {
+.text-dark-gray {
   color: var(--medium-gray);
 }
 
-.text-custom-onyx {
+.text-onyx {
   color: var(--onyx);
 }
 
 /* Button Styling */
-.btn-custom-primary {
+.btn-primary-custom {
   background-color: var(--primary-color);
   color: #fff;
   border: none;
 }
 
-.btn-custom-primary:hover {
+.btn-primary-custom:hover {
   background-color: var(--secondary-color);
 }

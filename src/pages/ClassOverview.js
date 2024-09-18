@@ -22,12 +22,12 @@ const ClassOverview = () => {
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {classes.map((classItem, index) => (
           <div key={index} style={{ margin: '10px' }}>
-            <h3>{classItem.headline}</h3>
+            <p><strong>Class:</strong> {classItem.className}</p>
             <p><strong>Main Teacher:</strong> {classItem.mainTeacher}</p> {/* Display main teacher */}
             {classItem.imageUrl && (
               <img
                 src={classItem.imageUrl}
-                alt={classItem.headline}
+                alt={classItem.className}
                 style={{ width: '200px', marginTop: '10px' }}
               />
             )}

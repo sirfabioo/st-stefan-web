@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 
 const AdminClasses = () => {
   const [className, setClassName] = useState('');
-  const [headline, setHeadline] = useState('');
   const [mainTeacher, setMainTeacher] = useState(''); // Add main teacher field
   const [image, setImage] = useState(null);
   const [classes, setClasses] = useState([]);
@@ -47,8 +46,8 @@ const AdminClasses = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!className || !headline || !mainTeacher) {
-      alert('Class name, headline, and main teacher are required.');
+    if (!className || !mainTeacher) {
+      alert('Class name and main teacher are required.');
       return;
     }
 
@@ -61,7 +60,7 @@ const AdminClasses = () => {
     if (editingClassId) {
       try {
         const classDocRef = doc(db, 'classes', editingClassId);
-        const updateData = { className, headline, mainTeacher };
+        const updateData = { className, mainTeacher };
         
         if (image) {
           const storageRef = ref(storage, `classImages/${image.name}`);
@@ -82,7 +81,6 @@ const AdminClasses = () => {
               await updateDoc(classDocRef, updateData);
               setImage(null);
               setClassName('');
-              setHeadline('');
               setMainTeacher('');
               setProgress(0);
               setEditingClassId(null);
@@ -91,7 +89,6 @@ const AdminClasses = () => {
         } else {
           await updateDoc(classDocRef, updateData);
           setClassName('');
-          setHeadline('');
           setMainTeacher('');
           setImage(null);
           setProgress(0);
@@ -120,14 +117,12 @@ const AdminClasses = () => {
           try {
             await addDoc(collection(db, 'classes'), {
               className,
-              headline,
               mainTeacher,
               imageUrl,
               createdAt: new Date(),
             });
             setImage(null);
             setClassName('');
-            setHeadline('');
             setMainTeacher('');
             setProgress(0);
           } catch (error) {
@@ -141,7 +136,6 @@ const AdminClasses = () => {
   // Edit Class
   const handleEdit = (classItem) => {
     setClassName(classItem.className);
-    setHeadline(classItem.headline);
     setMainTeacher(classItem.mainTeacher); // Prefill main teacher field
     setEditingClassId(classItem.id);
   };
@@ -167,12 +161,6 @@ const AdminClasses = () => {
         />
         <input
           type="text"
-          placeholder="Headline"
-          value={headline}
-          onChange={(e) => setHeadline(e.target.value)}
-        />
-        <input
-          type="text"
           placeholder="Main Teacher"
           value={mainTeacher}
           onChange={(e) => setMainTeacher(e.target.value)}
@@ -187,8 +175,8 @@ const AdminClasses = () => {
       <div>
         {classes.map((classItem) => (
           <div key={classItem.id} style={{ margin: '10px 0' }}>
-            <h4>{classItem.headline}</h4>
-            <p>Main Teacher: {classItem.mainTeacher}</p> {/* Display main teacher */}
+            <p><strong>Class:</strong> {classItem.className}</p>
+            <p><strong>Main Teacher:</strong> {classItem.mainTeacher}</p>
             {classItem.imageUrl && (
               <img src={classItem.imageUrl} alt={classItem.className} width="100" />
             )}

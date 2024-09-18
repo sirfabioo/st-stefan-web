@@ -14,7 +14,7 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log('Logged in successfully');
-      navigate('/blog'); // Redirect to blog overview page after login
+      navigate('/admin'); // Redirect to blog overview page after login
     } catch (err) {
       setError('Failed to log in. Please check your credentials.');
     }
