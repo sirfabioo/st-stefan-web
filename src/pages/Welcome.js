@@ -2,6 +2,7 @@ import React from "react";
 import CustomNavbar from "../components/CustomNavbar";
 import '../styles/Welcome.css'; // Import the custom CSS for the Welcome page
 import welcome_pic from '../images/welcome_pic.png'; // Import the image for the Welcome page
+import SchoolProgramShort from "../components/SchoolProgramShort";
 
 const Welcome = () => {
   return (
@@ -29,6 +30,9 @@ const Welcome = () => {
           <img src={welcome_pic} alt="Willkommen Bild" className="welcome-pic" />
         </div>
       </div>
+
+      <SchoolProgramShort />
+
     </div>
   );
 };

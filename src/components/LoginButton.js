@@ -10,7 +10,7 @@ const LoginButton = () => {
   };
 
   return (
-    <Button className='btn-custom-primary' onClick={handleLogin}>
+    <Button className='login-btn' onClick={handleLogin}>
       Login
     </Button>
   );

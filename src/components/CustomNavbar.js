@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar as BSNavbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../styles/CustomNavbar.css'; // Import the custom CSS
+import LoginButton from './LoginButton';
 
 const CustomNavbar = () => {
   return (
@@ -34,7 +35,7 @@ const CustomNavbar = () => {
             <Nav.Link as={Link} to="/blog">News</Nav.Link>
             <Nav.Link as={Link} to="/gallery">Fotos</Nav.Link>
             <Nav.Link as={Link} to="/contact">Kontakt</Nav.Link>
-            <button className="login-btn">Login</button> {/* Use custom class for the button */}
+            <LoginButton />
           </Nav>
         </BSNavbar.Collapse>
       </Container>
