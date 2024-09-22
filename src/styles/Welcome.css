@@ -16,6 +16,7 @@
   
   .welcome-image {
     max-width: 40%;  /* Restrict the image section to 40% of the container */
+    margin-left: 2rem;
   }
   
   .welcome-pic {
@@ -28,7 +29,7 @@
     font-family: 'Merriweather', serif;  /* Headline font */
     font-size: 3rem;  /* Increase font size for headline */
     font-weight: 1000;  /* Make it bolder */
-    color: var(--penn-red);  /* Use your custom Penn Red color */
+    color: #471613;
     margin-bottom: 1rem;  /* Add space between heading and subheading */
   }
 
@@ -36,7 +37,7 @@
     font-family: 'Merriweather', serif;  /* Headline font */
     font-size: 2.5rem;  /* Increase font size for headline */
     font-weight: 900;  /* Make it bolder */
-    color: var(--penn-red);  /* Use your custom Penn Red color */
+    color: var(--midpoint-red);  /* Use your custom Penn Red color */
     margin-bottom: 1rem;  /* Add space between heading and subheading */
   }
   

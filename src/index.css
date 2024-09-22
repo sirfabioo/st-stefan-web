@@ -5,18 +5,23 @@
 
 /* Define CSS Variables */
 :root {
-  --alloy-orange: #ca6411ff;
-  --penn-red: #9d1006ff;
-  --silver: #c9c9c9ff;
-  --silver-2: #a3a3a3ff;
+  /* Updated Color Palette */
+  --cadet-gray: #93a8acff;
+  --white: #ffffffff;
+  --orchid-pink: #e2b4bdff;
+  --imperial-red: #fb3640ff;
+  --midpoint-red: #932b2b;
+  --black-bean: #471613ff;
   --onyx: #424242ff;
 
   /* Additional variables for reuse */
-  --primary-color: var(--penn-red);
-  --secondary-color: var(--alloy-orange);
+  --primary-color: var(--black-bean);
+  --secondary-color: var(--midpoint-red);
+  --tertiary-color: var(--imperial-red);
   --text-color: var(--onyx);
-  --light-gray: var(--silver);
-  --medium-gray: var(--silver-2);
+  --accent-color: var(--orchid-pink);
+  --light-gray: var(--cadet-gray);
+  --medium-gray: var(--onyx);
 
   /* Font Families */
   --font-headline: 'Merriweather', serif; /* Headlines use Merriweather */
@@ -34,42 +39,42 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; /* Ensure headlines are bold */
 }
 
-/* Renamed Custom Utility Classes */
-.bg-custom-primary {
+/* Utility Classes */
+.bg-primary {
   background-color: var(--primary-color);
 }
 
-.bg-custom-secondary {
+.bg-secondary {
   background-color: var(--secondary-color);
 }
 
-.text-custom-primary {
+.text-primary {
   color: var(--primary-color);
 }
 
-.text-custom-secondary {
+.text-secondary {
   color: var(--secondary-color);
 }
 
-.text-custom-gray {
+.text-gray {
   color: var(--light-gray);
 }
 
-.text-custom-dark-gray {
+.text-dark-gray {
   color: var(--medium-gray);
 }
 
-.text-custom-onyx {
+.text-onyx {
   color: var(--onyx);
 }
 
 /* Button Styling */
-.btn-custom-primary {
+.btn-primary-custom {
   background-color: var(--primary-color);
   color: #fff;
   border: none;
 }
 
-.btn-custom-primary:hover {
+.btn-primary-custom:hover {
   background-color: var(--secondary-color);
 }

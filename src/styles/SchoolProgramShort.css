@@ -1,43 +1,29 @@
-/* src/styles/SchoolProgramIcons.css */
+/* src/styles/SimpleBar.css */
 
-.program-icons-container {
-  display: flex;
-  justify-content: space-around;  /* Spread the circles evenly */
-  align-items: center;
-  background-color: #f9f9f9;  /* Light grey background */
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 900px;  /* Container width */
-  margin: 2rem auto;  /* Center horizontally */
+.simple-bar {
+  background-color: #471613;  /* Dark red background */
+  color: white;  /* White text color */
+  padding: 2rem 0;  /* Padding to make the bar taller */
+  text-align: center;  /* Center the text */
+  width: 100%;  /* Full width */
 }
 
-.icon-circle {
-  background-color: var(--penn-red);  /* Red circle */
-  color: white;
-  border-radius: 50%;
-  width: 100px;  /* Circle size */
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
+.bar-heading {
+  font-family: 'Merriweather', serif;  /* Heading font */
+  font-size: 2rem;  /* Size for the heading */
+  margin: 0;  /* Remove default margin */
 }
 
-.icon-circle i {
-  font-size: 2rem;  /* Icon size */
+.simple-bar-variant {
+  background-color: var(--midpoint-red);  /* Penn Red background */
+  color: white;  /* White text color */
+  padding: 1rem 0;  /* Padding to make the bar taller */
+  text-align: center;  /* Center the text */
+  width: 100%;  /* Full width */
 }
 
-.cta-btn {
-  color: var(--penn-red);  /* Red text for the button */
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;  /* Rounded button */
-  font-size: 1rem;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.cta-btn:hover {
-  background-color: var(--alloy-orange);  /* Hover effect */
-  color: white;
+.bar-heading-variant {
+  font-family: 'Merriweather', serif;  /* Heading font */
+  font-size: 1.5rem;  /* Size for the heading */
+  margin: 0;  /* Remove default margin */
 }

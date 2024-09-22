@@ -14,7 +14,7 @@
 }
 
 .navbar .login-btn {
-  background-color: #9d1006ff; /* Custom Alloy Orange for button background */
+  background-color: var(--midpoint-red);
   color: white; /* White text for the button */
   border: none; /* Remove border */
   padding: 0.5rem 1rem; /* Adjust padding for button */
@@ -23,7 +23,7 @@
 }
 
 .navbar .login-btn:hover {
-  background-color: rgba(157, 16, 6, 0.843); /* Darker red (Penn Red) on hover */
+  background-color: var(--imperial-red); /* Hover color for button */
 }
 
 .navbar .login-btn:focus {
