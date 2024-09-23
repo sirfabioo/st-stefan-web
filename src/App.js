@@ -5,7 +5,6 @@ import Teachers from "./pages/Teachers";
 import Gallery from "./pages/Gallery";
 import SchoolInfo from "./pages/SchoolInfo";
 import Contact from "./pages/Contact";
-import BlogOverview from "./pages/BlogOverview";
 import BlogDetail from "./pages/BlogDetail";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
@@ -14,6 +13,7 @@ import GalleryUpload from "./pages/GalleryUpload.js";
 import ClassOverview from "./pages/ClassOverview.js";
 import AdminClasses from "./pages/AdminClasses.js";
 import Welcome from "./pages/Welcome.js";
+import BlogView from "./pages/BlogView.js";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/school-info" element={<SchoolInfo />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/blog" element={<BlogOverview />} />
+        <Route path="/blog" element={<BlogView />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/create-blog" element={<Blog />} />
         <Route path="/logout" element={<Logout />} />

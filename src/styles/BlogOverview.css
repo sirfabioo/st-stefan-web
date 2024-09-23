@@ -1,0 +1,76 @@
+/* src/styles/BlogOverview.css */
+
+.blog-overview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .blog-overview-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #471613;  /* Dark red color */
+    margin-bottom: 2rem;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* Two equal-width columns */
+    gap: 2rem;  /* Space between posts */
+    justify-items: center;  /* Centers the posts within the grid */
+  }
+  
+  .blog-card {
+    background-color: var(--cadet-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;  /* Full width of the grid column */
+    max-width: 550px;  /* Optionally restrict the max width of each card */
+    overflow: hidden;  /* Ensures the image respects the border-radius */
+    display: flex;
+    flex-direction: column; /* Makes sure the image and content are stacked vertically */
+  }
+  
+  /* Adjust the image to cover the full width of the card */
+  .blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;  /* Matches the card’s border-radius */
+    border-top-right-radius: 8px; /* Matches the card’s border-radius */
+    margin: 0;  /* Remove any margin */
+    display: block;
+    /* Give the image a red color */
+    filter: grayscale(100%) contrast(1) brightness(0.8) sepia(100%) hue-rotate(300deg);
+  }
+  
+  .blog-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #471613;
+    margin: 2rem 0 1rem 0; /* Keep space between image and text */
+    padding: 0 2rem; /* Add padding to the sides of the title */
+  }
+  
+  .blog-title a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .blog-title a:hover {
+    color: #fb3640;  /* Hover color change */
+  }
+  
+  .blog-excerpt {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #424242;
+    margin-bottom: 1.5rem; /* Adds space at the bottom of each post */
+    padding: 0 2rem; /* Add padding to the sides of the excerpt */
+  }
+  

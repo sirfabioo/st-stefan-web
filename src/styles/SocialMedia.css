@@ -1,0 +1,30 @@
+/* src/styles/SocialMedia.css */
+
+.social-media-container {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+
+.social-media-container h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color); /* Adjust the primary color according to your palette */
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Spacing between icons */
+}
+
+.social-link {
+  color: var(--primary-color); /* Default color */
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--imperial-red); /* Change color on hover */
+}

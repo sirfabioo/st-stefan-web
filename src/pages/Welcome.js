@@ -3,6 +3,9 @@ import CustomNavbar from "../components/CustomNavbar";
 import '../styles/Welcome.css'; // Import the custom CSS for the Welcome page
 import welcome_pic from '../images/welcome_pic.png'; // Import the image for the Welcome page
 import SchoolProgramShort from "../components/SchoolProgramShort";
+import BlogOverview from "../components/BlogOverview";
+import SocialMedia from "../components/SocialMedia";
+import CarouselComponent from "../components/CarouselComponent";
 
 const Welcome = () => {
   return (
@@ -33,6 +36,13 @@ const Welcome = () => {
 
       <SchoolProgramShort />
 
+      <BlogOverview />
+
+      <CarouselComponent />
+
+      <SocialMedia />
+
+      
     </div>
   );
 };

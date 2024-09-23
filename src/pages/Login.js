@@ -17,6 +17,10 @@ const Login = () => {
       navigate('/admin'); // Redirect to blog overview page after login
     } catch (err) {
       setError('Failed to log in. Please check your credentials.');
+      console.error('Login Error:', err);
+      // Clear the form fields on error
+      setEmail('');
+      setPassword('');
     }
   };
 

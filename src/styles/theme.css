@@ -1,12 +1,13 @@
 /* src/styles/theme.css */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 /* Define CSS Variables */
 :root {
   /* Updated Color Palette */
-  --cadet-gray: #93a8acff;
+  --cadet-gray: rgb(234, 234, 234);
   --white: #ffffffff;
   --orchid-pink: #e2b4bdff;
   --imperial-red: #fb3640ff;
@@ -24,7 +25,7 @@
   --medium-gray: var(--onyx);
 
   /* Font Families */
-  --font-headline: 'Merriweather', serif; /* Headlines use Merriweather */
+  --font-headline: 'Inter', sans-serif; /* Headlines use Overpass now */
   --font-body: 'Inter', sans-serif; /* Body text uses Inter */
 }
 
@@ -35,8 +36,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-headline); /* Headlines use Merriweather */
-  font-weight: 700; /* Ensure headlines are bold */
+  font-family: var(--font-headline); /* Headlines now use Overpass */
+  font-weight: 900; /* Ensure headlines are bold */
 }
 
 /* Utility Classes */

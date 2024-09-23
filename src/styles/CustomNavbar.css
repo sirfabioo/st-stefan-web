@@ -1,40 +1,57 @@
 /* src/styles/CustomNavbar.css */
 
-.navbar {
-  background-color: white;  /* Keep the navbar background white */
+/* Ensure even distribution between left, center, and right containers */
+.nav-container-left, .nav-container-right {
+  width: 40%;
+  padding-left: 7rem;
+  padding-right: 7rem
+}
+
+.logo-container {
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-nav .nav-link {
   color: #424242; /* Custom dark color for text */
-  margin-right: 1rem; /* Add space between text links */
+  margin-right: 1rem; /* Adjust spacing between links */
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ca6411; /* Hover color for text */
+  color: #ca6411; /* Hover color for links */
 }
 
 .navbar .login-btn {
   background-color: var(--midpoint-red);
-  color: white; /* White text for the button */
-  border: none; /* Remove border */
-  padding: 0.5rem 1rem; /* Adjust padding for button */
-  border-radius: 4px; /* Slightly round corners */
-  margin-left: 1rem; /* Add space between the button and text links */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-left: 1rem;
 }
 
 .navbar .login-btn:hover {
-  background-color: var(--imperial-red); /* Hover color for button */
-}
-
-.navbar .login-btn:focus {
-  outline: none; /* Remove focus outline */
-  box-shadow: none; /* Remove focus shadow */
+  background-color: var(--imperial-red);
 }
 
 .navbar-text {
-  font-family: 'Inter', sans-serif;  /* Use the text font */
-  font-size: 1rem;  /* Adjust the size to be proportional */
-  color: #9d1006ff !important;  /* Use the primary custom red color */
-  margin-left: 0.5rem;  /* Add some space between the logo and the text */
-  font-weight: 1000;  /* Make the text bold */
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #9d1006ff !important;
+  margin-top: 0.5rem;
+  font-weight: 1000;
+}
+
+.dashboard-btn {
+  background-color: var(--midpoint-red);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-left: 1rem;
+}
+
+.dashboard-btn:hover {
+  background-color: var(--imperial-red);
 }

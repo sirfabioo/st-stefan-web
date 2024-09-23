@@ -1,0 +1,56 @@
+/* src/styles/CarouselComponent.css */
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: center;
+    margin-bottom: 10rem;
+  }
+  
+  .carousel-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #471613;  /* Dark red for headline */
+    margin-bottom: 2rem;
+  }
+  
+  /* Center the carousel content and make sure the image fits properly */
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;  /* Same as the max-height of the image */
+    overflow: hidden; /* This will clip the content to the rounded corners */
+    border-radius: 15px; /* Apply rounded corners */
+  }
+  
+  /* Adjusting the carousel image to have rounded corners */
+  .carousel-image {
+    max-height: 100%;  /* Set a max height for the image */
+    width: 100%;  /* Ensure it fills the width of the container */
+    object-fit: contain;  /* Ensures the image fits within the carousel without cropping */
+  }
+  
+  /* Styling the carousel controls (previous/next arrows) */
+  .carousel-control-prev,
+  .carousel-control-next {
+    filter: invert(50%); /* Ensure the default icons are visible */
+  }
+  
+  /* Change the color of the previous/next arrows */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #ca6411; /* Custom red color for the controls */
+    border-radius: 50%;  /* Make the controls round */
+    width: 50px;
+    height: 50px;
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Darken the background for text readability */
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  

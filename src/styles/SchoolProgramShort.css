@@ -1,29 +1,73 @@
-/* src/styles/SimpleBar.css */
+/* src/styles/SchoolProgramShort.css */
 
 .simple-bar {
   background-color: #471613;  /* Dark red background */
-  color: white;  /* White text color */
-  padding: 2rem 0;  /* Padding to make the bar taller */
-  text-align: center;  /* Center the text */
-  width: 100%;  /* Full width */
+  color: white;
+  padding: 2rem 0;
+  text-align: right;
+  width: 100%;
+  padding-right: 6rem;
 }
 
 .bar-heading {
-  font-family: 'Merriweather', serif;  /* Heading font */
-  font-size: 2rem;  /* Size for the heading */
-  margin: 0;  /* Remove default margin */
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 900;
 }
 
-.simple-bar-variant {
-  background-color: var(--midpoint-red);  /* Penn Red background */
-  color: white;  /* White text color */
-  padding: 1rem 0;  /* Padding to make the bar taller */
-  text-align: center;  /* Center the text */
-  width: 100%;  /* Full width */
+.program-features {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  /* 5 equal parts */
+  gap: 1rem;  /* Space between each box */
+  padding: 2rem;
+  background-color: #471613;  /* Same deep red background */
+  color: white;
+  margin-bottom: 10rem;
 }
 
-.bar-heading-variant {
-  font-family: 'Merriweather', serif;  /* Heading font */
-  font-size: 1.5rem;  /* Size for the heading */
-  margin: 0;  /* Remove default margin */
+.feature-box {
+  background-color: #5a201d;  /* Slightly darker red for the boxes */
+  padding: 2rem;
+  position: relative;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
 }
+
+.feature-number {
+  position: absolute;
+  top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.feature-box p {
+  margin-top: 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+.cta-btn {
+  margin-top: 2rem;
+  background-color: white;
+  color: #471613;  /* Button with dark red text */
+  padding: 0.75rem 0;  /* Adjusted padding: vertical only */
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 100%;  /* Make the button take the full width */
+  display: block;  /* Ensure it's a block-level element */
+  text-align: center;  /* Center the button text */
+  transition: background-color 0.3s, color 0.3s;  /* Smooth color transition */
+}
+
+.cta-btn:hover {
+  background-color: #fb3640;  /* Change button background on hover */
+  color: white;
+}
+
+
