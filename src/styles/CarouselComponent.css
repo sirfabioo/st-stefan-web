@@ -9,11 +9,11 @@
   }
   
   .carousel-heading {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 900;
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
     color: #471613;  /* Dark red for headline */
-    margin-bottom: 2rem;
+    margin-bottom: 8rem;
   }
   
   /* Center the carousel content and make sure the image fits properly */

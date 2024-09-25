@@ -39,11 +39,12 @@ const SchoolProgramShort = () => {
           <Link to="/schoolinfo" className="cta-btn">Mehr erfahren</Link>
         </div>
 
-        <br></br>
-        <br></br>
-        <br></br>
+        
         
       </div>
+      <div className='simple-bar-variant gradient'>
+          
+        </div>
 
     </div>
   );

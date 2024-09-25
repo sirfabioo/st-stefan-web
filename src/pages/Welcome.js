@@ -16,7 +16,7 @@ const Welcome = () => {
       {/* Welcome content in a flex container */}
       <div className="welcome-content">
         <div className="welcome-text">
-          <h1 className="welcome-quote">Bildung, die bewegt –</h1>
+          <h1 className="welcome-quote">Bildung, die bewegt</h1>
           <h2 className="welcome-heading">
             Die Sportmittelschule St. Stefan Christine Lavant heißt Sie herzlich willkommen!
           </h2>

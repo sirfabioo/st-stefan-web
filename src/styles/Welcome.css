@@ -11,7 +11,7 @@
   }
   
   .welcome-text {
-    max-width: 50%;  /* Restrict the text section to 50% of the container */
+    max-width: 60%;  /* Restrict the text section to 50% of the container */
     padding-right: 2rem;  /* Add space between the text and the image */
   }
   
@@ -27,18 +27,18 @@
   }
   
   .welcome-quote {
-    font-family: 'Inter', sans-serif;  /* Headline font */
-    font-size: 3rem;  /* Increase font size for headline */
-    font-weight: 900;  /* Make it bolder */
+    font-family: 'DM Serif Display', serif;  /* Headline font */
+    font-size: 4.5rem;  /* Increase font size for headline */
+    font-weight: 400;  /* Make it bolder */
     color: #471613;
     margin-bottom: 1rem;  /* Add space between heading and subheading */
   }
 
   .welcome-heading {
-    font-family: 'Inter', sans-serif;  /* Headline font */
+    font-family: 'DM Serif Display', serif;  /* Headline font */
     font-size: 2.5rem;  /* Increase font size for headline */
-    font-weight: 900;  /* Make it bolder */
-    color: var(--midpoint-red);  /* Use your custom Penn Red color */
+    font-weight: 400;  /* Make it bolder */
+    color: var(--midpoint-red);
     margin-bottom: 1rem;  /* Add space between heading and subheading */
   }
   

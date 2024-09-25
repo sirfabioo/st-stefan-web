@@ -27,12 +27,13 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 5px;
   margin-left: 1rem;
 }
 
 .navbar .login-btn:hover {
   background-color: var(--imperial-red);
+  color: white;
 }
 
 .navbar-text {

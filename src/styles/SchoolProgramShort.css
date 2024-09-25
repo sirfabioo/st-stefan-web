@@ -7,23 +7,47 @@
   text-align: right;
   width: 100%;
   padding-right: 6rem;
+  /* give the text a shadow with #932B2B */
+  text-shadow: 0px 2px 2px #932b2b;
+}
+
+.simple-bar-variant {
+  color: white;
+  padding: 5rem 0;
+  text-align: right;
+  width: 100%;
+  padding-right: 6rem;
+  /* Add a smoother gradient with redder shades to avoid orange */
+  margin-bottom: 10rem;
+}
+
+.gradient {
+  background-image: linear-gradient(
+    180deg,
+    hsl(3deg 58% 18%) 0%,
+    hsl(2deg 57% 25%) 20%,
+    hsl(1deg 55% 33%) 40%,
+    hsl(0deg 39% 47%) 60%,
+    hsl(0deg 41% 71%) 80%,
+    hsl(0deg 0% 100%) 100%
+  );
 }
 
 .bar-heading {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.5rem;
   margin: 0;
-  font-weight: 900;
+  font-weight: 400;
 }
 
 .program-features {
   display: grid;
   grid-template-columns: repeat(5, 1fr);  /* 5 equal parts */
-  gap: 1rem;  /* Space between each box */
+  gap: 2rem;  /* Space between each box */
   padding: 2rem;
   background-color: #471613;  /* Same deep red background */
   color: white;
-  margin-bottom: 10rem;
+  
 }
 
 .feature-box {
@@ -56,7 +80,7 @@
   background-color: white;
   color: #471613;  /* Button with dark red text */
   padding: 0.75rem 0;  /* Adjusted padding: vertical only */
-  border-radius: 50px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   width: 100%;  /* Make the button take the full width */
