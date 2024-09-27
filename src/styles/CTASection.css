@@ -1,0 +1,25 @@
+.cta-section {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 4rem;
+  }
+  
+  .cta-section h2 {
+    font-family: var(--font-headline);
+    margin-bottom: 2rem;
+  }
+  
+  .cta-section .cta-btn {
+    background-color: var(--tertiary-color);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.25rem;
+  }
+  
+  .cta-section .cta-btn:hover {
+    background-color: var(--secondary-color);
+  }
+  

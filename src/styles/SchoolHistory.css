@@ -1,0 +1,25 @@
+/* src/styles/SchoolHistory.css */
+
+.history-section {
+    padding: 4rem 2rem; /* Padding for the section */
+    margin: 2rem 0; /* Margin to add space between sections */
+  }
+  
+  .history-heading {
+    font-family: var(--font-headline); /* Use the headline font from theme */
+    font-size: 2.5rem; /* Large heading */
+    color: var(--primary-color); /* Dark red color */
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .history-content {
+    font-family: var(--font-body); /* Use the body font */
+    font-size: 1.125rem;
+    color: var(--text-color); /* Dark text color */
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 900px; /* Limit content width */
+    margin: 0 auto; /* Center content */
+  }
+  

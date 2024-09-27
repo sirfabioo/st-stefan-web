@@ -1,0 +1,44 @@
+.hero-section {
+    position: relative;
+    /* Add a background image to the hero section, its in /images/hero-bg.jpg */
+    background-image: url('../images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-text {
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .hero-text h1 {
+    font-family: var(--font-headline);
+    color: white;
+    font-size: 6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-text p {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-text .cta-btn {
+    background-color: var(--imperial-red);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .hero-text .cta-btn:hover {
+    background-color: var(--secondary-color);
+  }
+  

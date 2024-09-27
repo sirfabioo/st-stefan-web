@@ -1,0 +1,36 @@
+.blog-detail-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  
+  .blog-detail-heading {
+    font-family: var(--font-headline);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .blog-detail-content {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .blog-detail-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .blog-detail-loading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--font-body);
+  }
+  

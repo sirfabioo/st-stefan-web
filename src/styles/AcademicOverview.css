@@ -1,0 +1,53 @@
+.academic-overview-section {
+    padding: 4rem 0;
+}
+
+.academic-overview-section h2 {
+    font-family: var(--font-headline);
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.accordion {
+    max-width: 70vh;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures corners remain rounded even when expanded */
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden; /* Prevents overflow from affecting border radius */
+}
+
+.accordion-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 8px; /* Ensures all corners stay rounded */
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Adds hover effect */
+    text-align: center;
+}
+
+.accordion-header:hover {
+    background-color: var(--secondary-color); /* Adds hover color effect */
+}
+
+.accordion-content {
+    background-color: white;
+    border-radius: 0 0 8px 8px; /* Only bottom corners are rounded */
+    color: var(--text-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-content.open {
+    max-height: 600px; /* Adjust this height based on content */
+    padding: 1rem;
+}

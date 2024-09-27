@@ -1,0 +1,60 @@
+.teachers-page-container {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 4rem 2rem; /* Adjust padding to add space */
+  background-color: var(--light-gray);
+    border-radius: 8px;
+}
+
+.teachers-page-heading {
+  font-family: var(--font-headline);
+  text-align: center;
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+}
+
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust to display 3 columns */
+  gap: 2rem;
+}
+
+.teacher-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.teacher-card h4 {
+  font-family: var(--font-headline);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.teacher-bio {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.teacher-card p {
+  font-family: var(--font-body);
+  color: var(--text-color);
+}
+
+.teacher-short-bio {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--text-color);
+  margin-top: 1rem;
+}
+
+.icon-style {
+  font-size: 50px;
+  color: var(--midpoint-red);
+  margin-bottom: 1rem;
+}
