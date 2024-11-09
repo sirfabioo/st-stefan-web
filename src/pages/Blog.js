@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { db, storage, auth } from '../firebase';
-import { onAuthStateChanged } from 'firebase/auth'; // Firebase auth observer
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
+import { collection, addDoc, updateDoc, doc, getDocs, serverTimestamp } from 'firebase/firestore';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Blog.css';
+import CustomNavbar from '../components/CustomNavbar';
+
+
 
 const Blog = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
-  const [user, setUser] = useState(null); // Track the logged-in user
+  const [user, setUser] = useState(null);
+  const [blogPosts, setBlogPosts] = useState([]);
+  const [editingPostId, setEditingPostId] = useState(null);
 
   const navigate = useNavigate();
 
@@ -18,17 +24,28 @@ const Blog = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user); // Set logged-in user
+        setUser(user);
       } else {
         setUser(null);
-        navigate('/login'); // Redirect to login if not authenticated
-        // Give an alert "You need to be logged in to create a blog post"
-        alert('You need to be logged in to create a blog post');
+        navigate('/login');
+        alert('You need to be logged in to create or edit a blog post');
       }
     });
-    return unsubscribe; // Clean up the observer on component unmount
+    return unsubscribe;
   }, [navigate]);
 
+  // Fetch existing blog posts
+  useEffect(() => {
+    const fetchBlogPosts = async () => {
+      const querySnapshot = await getDocs(collection(db, 'blogPosts'));
+      const posts = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setBlogPosts(posts);
+    };
+
+    fetchBlogPosts();
+  }, []);
+
+  // Handle form submission for creating or updating posts
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title || !content) {
@@ -36,24 +53,13 @@ const Blog = () => {
       return;
     }
 
-    if (!image) {
-      // Submit without image
-      try {
-        await addDoc(collection(db, 'blogPosts'), {
-          title,
-          content,
-          imageUrl: '',
-          createdAt: serverTimestamp(),
-        });
-        setTitle('');
-        setContent('');
-        setImage(null);
-        setProgress(0);
-      } catch (error) {
-        console.error('Error adding blog post:', error);
-      }
-    } else {
-      // Submit with image upload
+    const postData = {
+      title,
+      content,
+      createdAt: serverTimestamp(),
+    };
+
+    if (image) {
       const storageRef = ref(storage, `blogImages/${image.name}`);
       const uploadTask = uploadBytesResumable(storageRef, image);
 
@@ -68,49 +74,86 @@ const Blog = () => {
         },
         async () => {
           const imageUrl = await getDownloadURL(uploadTask.snapshot.ref);
-          try {
-            await addDoc(collection(db, 'blogPosts'), {
-              title,
-              content,
-              imageUrl,
-              createdAt: serverTimestamp(),
-            });
-            setTitle('');
-            setContent('');
-            setImage(null);
-            setProgress(0);
-          } catch (error) {
-            console.error('Error adding blog post:', error);
+          postData.imageUrl = imageUrl;
+
+          if (editingPostId) {
+            await updateDoc(doc(db, 'blogPosts', editingPostId), postData);
+          } else {
+            await addDoc(collection(db, 'blogPosts'), postData);
           }
+
+          resetForm();
         }
       );
+    } else {
+      if (editingPostId) {
+        await updateDoc(doc(db, 'blogPosts', editingPostId), postData);
+      } else {
+        await addDoc(collection(db, 'blogPosts'), postData);
+      }
+
+      resetForm();
     }
   };
 
-  // If the user is not logged in, show nothing or a loading message
+  // Reset the form after submission or canceling editing
+  const resetForm = () => {
+    setTitle('');
+    setContent('');
+    setImage(null);
+    setProgress(0);
+    setEditingPostId(null);
+  };
+
+  // Handle clicking an existing post to edit
+  const handleEdit = (post) => {
+    setTitle(post.title);
+    setContent(post.content);
+    setImage(null);
+    setEditingPostId(post.id);
+  };
+
   if (!user) {
     return <p>Loading...</p>;
   }
 
   return (
     <div>
-      <h2>Create Blog Post</h2>
-      <form onSubmit={handleSubmit}>
+    <CustomNavbar />
+
+    <div className="blog-container">
+      <h2 className="blog-heading">{editingPostId ? 'Edit Blog Post' : 'Create Blog Post'}</h2>
+      
+      <form className="blog-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          className="blog-input"
         />
         <textarea
           placeholder="Content"
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          className="blog-textarea"
         ></textarea>
-        <input type="file" onChange={(e) => setImage(e.target.files[0])} />
-        <button type="submit">Submit</button>
+        <input type="file" onChange={(e) => setImage(e.target.files[0])} className="blog-file-input" />
+        <button type="submit" className="blog-submit-btn">{editingPostId ? 'Update' : 'Submit'}</button>
+        {editingPostId && <button type="button" onClick={resetForm} className="blog-cancel-btn">Cancel</button>}
       </form>
+
       {progress > 0 && <p>Uploading: {progress}%</p>}
+
+      <h3 className="existing-posts-heading">Existing Blog Posts</h3>
+      <ul className="blog-posts-list">
+        {blogPosts.map((post) => (
+          <li key={post.id} className="blog-post-item" onClick={() => handleEdit(post)}>
+            {post.title}
+          </li>
+        ))}
+      </ul>
+    </div>
     </div>
   );
 };

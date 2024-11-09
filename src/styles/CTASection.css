@@ -1,25 +1,28 @@
 .cta-section {
-    background-color: var(--secondary-color);
-    color: white;
-    text-align: center;
-    padding: 4rem;
-  }
-  
-  .cta-section h2 {
-    font-family: var(--font-headline);
-    margin-bottom: 2rem;
-  }
-  
-  .cta-section .cta-btn {
-    background-color: var(--tertiary-color);
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.25rem;
-  }
-  
-  .cta-section .cta-btn:hover {
-    background-color: var(--secondary-color);
-  }
-  
+  background-color: var(--secondary-color);
+  color: white;
+  text-align: center; /* Centers text and inline-block elements */
+  padding: 4rem;
+}
+
+.cta-section h2 {
+  font-family: var(--font-headline);
+  margin-bottom: 2rem;
+}
+
+/* Centering the button */
+.cta-section .cta-btn {
+  background-color: var(--tertiary-color);
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  display: inline-block; /* Ensures the button is treated as inline content */
+  margin: 0 auto; /* Centers the button horizontally */
+  max-width: 50%;
+}
+
+.cta-section .cta-btn:hover {
+  background-color: var(--secondary-color);
+}

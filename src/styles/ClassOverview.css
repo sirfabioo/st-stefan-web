@@ -23,6 +23,12 @@
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, filter 0.3s ease; /* Adds smooth transition on hover */
+}
+
+.class-card:hover {
+    filter: brightness(105%); /* Slightly brighten on hover */
+    transform: scale(1.02); /* Slight zoom on hover */
 }
 
 .class-card p {
@@ -49,11 +55,6 @@
     object-fit: cover; /* Ensures the image fills the container without distortion */
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.class-image:hover {
-    transform: scale(1.05);
 }
 
 /* Modal for enlarged image */

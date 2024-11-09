@@ -6,7 +6,7 @@
 /* Define CSS Variables */
 :root {
   /* Updated Color Palette */
-  --cadet-gray: rgb(234, 234, 234);
+  --cadet-gray: #eaeaea;
   --white: #ffffffff;
   --orchid-pink: #e2b4bdff;
   --imperial-red: #fb3640ff;

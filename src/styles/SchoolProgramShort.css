@@ -4,7 +4,7 @@
   background-color: #471613;  /* Dark red background */
   color: white;
   padding: 2rem 0;
-  text-align: right;
+  text-align: center;
   width: 100%;
   padding-right: 6rem;
   /* give the text a shadow with #932B2B */
@@ -13,7 +13,7 @@
 
 .simple-bar-variant {
   color: white;
-  padding: 5rem 0;
+  padding: 10rem 0;
   text-align: right;
   width: 100%;
   padding-right: 6rem;
@@ -51,7 +51,7 @@
 }
 
 .feature-box {
-  background-color: #5a201d;  /* Slightly darker red for the boxes */
+  background-color: var(--midpoint-red);  /* Slightly darker red for the boxes */
   padding: 2rem;
   position: relative;
   border-radius: 8px;
@@ -70,7 +70,7 @@
 .feature-box p {
   margin-top: 2rem;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.5;
   color: white;
 }

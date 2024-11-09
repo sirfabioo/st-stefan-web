@@ -30,7 +30,7 @@
     font-family: 'DM Serif Display', serif;  /* Headline font */
     font-size: 4.5rem;  /* Increase font size for headline */
     font-weight: 400;  /* Make it bolder */
-    color: #471613;
+    color: var(--midpoint-red);
     margin-bottom: 1rem;  /* Add space between heading and subheading */
   }
 
@@ -38,7 +38,7 @@
     font-family: 'DM Serif Display', serif;  /* Headline font */
     font-size: 2.5rem;  /* Increase font size for headline */
     font-weight: 400;  /* Make it bolder */
-    color: var(--midpoint-red);
+    color: black;
     margin-bottom: 1rem;  /* Add space between heading and subheading */
   }
   
@@ -47,6 +47,6 @@
     font-family: 'Inter', sans-serif;  /* Body font */
     font-size: 1.125rem;  /* Slightly larger text */
     color: var(--text-custom-dark-gray);  /* Use the custom gray color */
-    text-align: justify;
+    text-align: left;
   }
   

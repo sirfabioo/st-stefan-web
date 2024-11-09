@@ -26,15 +26,6 @@ const CustomNavbar = () => {
   return (
     <BSNavbar expand="lg" className="py-3" bg="white" variant="light">
       <Container fluid className="d-flex justify-content-between align-items-center">
-        
-        {/* Left-side Links */}
-        <div className="nav-container-left d-flex justify-content-start">
-          <Nav>
-            <Nav.Link as={Link} to="/schoolinfo">Schule</Nav.Link>
-            <Nav.Link as={Link} to="/classes">Klassen</Nav.Link>
-            <Nav.Link as={Link} to="/teachers">Lehrer</Nav.Link>
-          </Nav>
-        </div>
 
         {/* Centered Logo with Text */}
         <div className="logo-container d-flex justify-content-center align-items-center">
@@ -51,9 +42,12 @@ const CustomNavbar = () => {
         {/* Right-side Links */}
         <div className="nav-container-right d-flex justify-content-end align-items-center">
           <Nav>
-            <Nav.Link as={Link} to="/blog">News</Nav.Link>
-            <Nav.Link as={Link} to="/gallery">Fotos</Nav.Link>
-            <Nav.Link as={Link} to="/contact">Kontakt</Nav.Link>
+            	<Nav.Link as={Link} to="/schoolinfo">Schule</Nav.Link>
+              <Nav.Link as={Link} to="/classes">Klassen</Nav.Link>
+              <Nav.Link as={Link} to="/teachers">Lehrer</Nav.Link>
+              <Nav.Link as={Link} to="/blog">News</Nav.Link>
+              <Nav.Link as={Link} to="/gallery">Fotos</Nav.Link>
+              <Nav.Link as={Link} to="/contact">Kontakt</Nav.Link>
           </Nav>
 
           {/* Conditionally Render Button */}

@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp, getDocs, query, orderBy } from 'firebase/firestore';
 import { auth, storage, db } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import '../styles/GalleryUpload.css';
+import CustomNavbar from '../components/CustomNavbar';
 
 const GalleryUpload = () => {
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
-  const [user, setUser] = useState(null); // Track logged-in user
+  const [uploadedImages, setUploadedImages] = useState([]);
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  // Check if the user is authenticated, if not redirect to login
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -24,6 +26,16 @@ const GalleryUpload = () => {
     return unsubscribe;
   }, [navigate]);
 
+  useEffect(() => {
+    const fetchImages = async () => {
+      const q = query(collection(db, 'galleryImages'), orderBy('uploadedAt', 'desc'));
+      const querySnapshot = await getDocs(q);
+      const galleryImages = querySnapshot.docs.map((doc) => doc.data());
+      setUploadedImages(galleryImages);
+    };
+    fetchImages();
+  }, []);
+
   const handleImageUpload = (e) => {
     setImage(e.target.files[0]);
   };
@@ -35,13 +47,13 @@ const GalleryUpload = () => {
       return;
     }
 
-    const storageRef = ref(storage, `gallery/${image.name}`);
+    const storageRef = ref(storage, `galleryImages/${image.name}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
 
     uploadTask.on(
       'state_changed',
       (snapshot) => {
-        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
         setProgress(progress);
       },
       (error) => {
@@ -54,6 +66,7 @@ const GalleryUpload = () => {
             imageUrl,
             uploadedAt: serverTimestamp(),
           });
+          setUploadedImages((prevImages) => [{ imageUrl }, ...prevImages]);
           setImage(null);
           setProgress(0);
         } catch (error) {
@@ -63,16 +76,34 @@ const GalleryUpload = () => {
     );
   };
 
-  if (!user) return <p>Loading...</p>; // Loading while checking auth
+  if (!user) return <p>Loading...</p>;
 
   return (
     <div>
-      <h2>Upload Images to Gallery</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="file" onChange={handleImageUpload} />
-        <button type="submit">Upload</button>
+      <CustomNavbar />
+    <div className="gallery-upload-container">
+      <h2 className="gallery-upload-heading">Upload Images to Gallery</h2>
+      <form className="upload-form" onSubmit={handleSubmit}>
+        <input type="file" onChange={handleImageUpload} className="file-input" />
+        <button type="submit" className="upload-button">Upload</button>
       </form>
-      {progress > 0 && <p>Uploading: {progress}%</p>}
+      {progress > 0 && (
+        <div className="progress-bar">
+          <div className="progress-bar-fill" style={{ width: `${progress}%` }}></div>
+          <span className="progress-bar-label">{progress}%</span>
+        </div>
+      )}
+      <div className="image-grid">
+        {uploadedImages.map((image, index) => (
+          <img
+            key={index}
+            src={image.imageUrl}
+            alt={`Gallery ${index}`}
+            className="gallery-image"
+          />
+        ))}
+      </div>
+    </div>
     </div>
   );
 };

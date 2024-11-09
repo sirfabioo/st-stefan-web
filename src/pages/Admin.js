@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import Logout from './Logout';
+import '../styles/Admin.css';
+import CustomNavbar from '../components/CustomNavbar';
 
 const Admin = () => {
   const [user, setUser] = useState(null);
@@ -14,33 +16,40 @@ const Admin = () => {
       if (user) {
         setUser(user); // Set logged-in user
       } else {
-        navigate('/login'); // Redirect to login if not authenticated
-        // Give an alert "You need to be logged in to access the admin dashboard"
         alert('You need to be logged in to access the admin dashboard');
+        navigate('/login'); // Redirect to login if not authenticated
       }
     });
     return unsubscribe; // Clean up the observer on component unmount
   }, [navigate]);
 
-  if (!user) return <p>Loading...</p>; // Show loading while checking auth status
+  if (!user) return <p className="loading-text">Loading...</p>; // Show loading while checking auth status
 
   return (
     <div>
-      <h2>Admin Dashboard</h2>
-      <p>Welcome, {user.email}</p>
-      <ul>
-        {/* Links to admin actions */}
-        <li>
-          <Link to="/create-blog">Create a Blog Post</Link>
-        </li>
-        <li>
-          <Link to="/upload-gallery">Upload Images to Gallery</Link>
-        </li>
-        <li>
-            <Link to="/admin/classes">Manage Class Images</Link>
-        </li>
-      </ul>
-      <Logout />
+      <CustomNavbar />
+      <div className="admin-container">
+        <h2 className="admin-heading">Admin Dashboard</h2>
+        <p className="admin-welcome">Welcome, {user.email}</p>
+
+        <div className="admin-links">
+          <ul>
+            <li>
+              <Link to="/create-blog" className="admin-link">Create or Edit a Blog Post</Link>
+            </li>
+            <li>
+              <Link to="/upload-gallery" className="admin-link">Upload Images to Gallery</Link>
+            </li>
+            <li>
+              <Link to="/admin/classes" className="admin-link">Manage Class Images</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="admin-logout">
+          <Logout />
+        </div>
+      </div>
     </div>
   );
 };

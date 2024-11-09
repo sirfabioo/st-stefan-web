@@ -26,14 +26,22 @@
   .blog-card {
     background-color: var(--cadet-gray);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Add a subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Subtle shadow */
     text-align: left;
     width: 100%;  /* Full width of the grid column */
-    max-width: 550px;  /* Optionally restrict the max width of each card */
+    max-width: 550px;  /* Optional max width */
     overflow: hidden;  /* Ensures the image respects the border-radius */
     display: flex;
-    flex-direction: column; /* Makes sure the image and content are stacked vertically */
+    flex-direction: column; /* Stacks image and content vertically */
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+  /* Corrected hover syntax */
+  .blog-card:hover {
+      filter: brightness(110%); /* Slightly brighter on hover */
+      transform: scale(1.02); /* Adds a subtle zoom effect */
   }
+
   
   /* Adjust the image to cover the full width of the card */
   .blog-image {
@@ -49,7 +57,7 @@
   }
   
   .blog-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'DM Serif Display', serif;
     font-size: 1.5rem;
     font-weight: 900;
     color: #471613;

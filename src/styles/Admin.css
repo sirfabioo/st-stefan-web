@@ -1,0 +1,80 @@
+.admin-container {
+    max-width: 500px;
+    margin: 5vh auto; /* Centers vertically and horizontally */
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .admin-heading {
+    font-family: var(--font-headline);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .admin-welcome {
+    font-family: var(--font-body);
+    font-size: 1.125rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+  }
+  
+  .admin-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ensures the list spans the container width */
+  }
+  
+  .admin-link {
+    display: block;
+    padding: 2rem;
+    margin: 0.5rem 0;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.125rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    max-width: 400px; /* Limit the maximum button width */
+  }
+  
+  .admin-link:hover {
+    background-color: var(--tertiary-color);
+  }
+  
+  .admin-logout {
+    margin-top: 2rem;
+    width: 80%; /* Ensures the logout button matches other button widths */
+    max-width: 300px;
+  }
+  
+  .admin-logout button {
+    width: 100%; /* Makes the logout button match other buttons */
+    padding: 1rem 0;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.125rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-logout button:hover {
+    background-color: var(--tertiary-color);
+  }
+  
+  .loading-text {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--text-color);
+  }
+  

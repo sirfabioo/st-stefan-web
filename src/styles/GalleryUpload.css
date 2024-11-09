@@ -1,0 +1,97 @@
+.gallery-upload-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .gallery-upload-heading {
+    font-family: var(--font-headline);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+  
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .file-input {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+  }
+  
+  .upload-button {
+    background-color: var(--tertiary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: var(--font-body);
+  }
+  
+  .upload-button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Styled progress bar container */
+  .progress-bar {
+    width: 100%;
+    max-width: 400px;
+    height: 15px;
+    background-color: #f0f0f0;
+    border-radius: 7.5px;
+    overflow: hidden;
+    margin-top: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  /* Styled progress fill with gradient and animation */
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* gradient from coral to light orange */
+    transition: width 0.3s ease;
+  }
+  
+  /* Percentage label centered over the progress bar */
+  .progress-bar-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #333;
+    font-family: var(--font-body);
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gallery-image:hover {
+    transform: scale(1.05);
+  }
+  

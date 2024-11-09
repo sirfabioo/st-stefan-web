@@ -22,7 +22,7 @@ const SchoolValues = () => {
             {/* Render the correct icon */}
             {value.icon}
             <h3>{value.title}</h3>
-            <p>{value.description}</p>
+          
           </div>
         ))}
       </div>
