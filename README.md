@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Sportmittelschule St. Stefan - School Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the official repository for the **Sportmittelschule St. Stefan** website! This project is designed to provide a modern, user-friendly, and responsive platform for showcasing school information, events, and updates to students, parents, and the community.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Dynamic Homepage**: A welcoming homepage with an overview of the school’s mission and highlights.
+- **Teacher Profiles**: Detailed information about the school’s dedicated teaching staff.
+- **Blog and News Section**: Stay updated with the latest school news and events.
+- **Photo Gallery**: A collection of memorable moments from school life.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Admin Panel**: A secure section for authorized personnel to manage blog posts and gallery content.
+- **Multilingual Support** *(if applicable)*.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **Frontend**: React.js, React Bootstrap
+- **Backend**: Firebase Firestore (for database) and Firebase Storage (for image and video uploads)
+- **Authentication**: Firebase Authentication
+- **Hosting**: Firebase Hosting
+- **Styling**: Custom CSS with CSS variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```plaintext
+src/
+├── components/
+│   ├── CustomNavbar.js          # Navigation bar
+│   ├── Footer.js                # Footer component
+│   ├── BlogOverview.js          # Blog post preview section
+│   ├── TeacherSpotlight.js      # Teacher profiles spotlight
+│   ├── VideoPlayer.js           # Video playback component
+│   ├── SchoolValues.js          # School values overview
+│   └── ...
+├── pages/
+│   ├── Welcome.js               # Homepage
+│   ├── Blog.js                  # Blog creation and editing
+│   ├── Gallery.js               # Photo gallery
+│   ├── Login.js                 # Admin login page
+│   └── ...
+├── styles/
+│   ├── CustomNavbar.css
+│   ├── Footer.css
+│   ├── BlogOverview.css
+│   └── ...
+├── firebase.js                  # Firebase configuration
+└── App.js                       # Main application file
