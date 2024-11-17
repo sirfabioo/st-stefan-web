@@ -29,23 +29,33 @@ const Login = () => {
       <div className="login-card">
         <h2 className="login-title">Teacher Login</h2>
         <form onSubmit={handleLogin} className="login-form">
+          {/* Email Input */}
           <input
             type="email"
+            name="email" // Add name attribute for autofill
+            id="email" // Add ID for better browser support
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email" // Autofill email
             required
             className="login-input"
           />
+          {/* Password Input */}
           <input
             type="password"
+            name="password" // Add name attribute for autofill
+            id="password" // Add ID for better browser support
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password" // Autofill password
             required
             className="login-input"
           />
+          {/* Error Message */}
           {error && <p className="login-error">{error}</p>}
+          {/* Submit Button */}
           <button type="submit" className="login-button">Login</button>
         </form>
       </div>

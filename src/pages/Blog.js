@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { db, storage, auth } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-import { collection, addDoc, updateDoc, doc, getDocs, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+  getDocs,
+  serverTimestamp,
+} from 'firebase/firestore';
+import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from 'firebase/storage';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Blog.css';
 import CustomNavbar from '../components/CustomNavbar';
-
-
 
 const Blog = () => {
   const [title, setTitle] = useState('');
@@ -38,7 +44,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogPosts = async () => {
       const querySnapshot = await getDocs(collection(db, 'blogPosts'));
-      const posts = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const posts = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setBlogPosts(posts);
     };
 
@@ -113,47 +119,80 @@ const Blog = () => {
     setEditingPostId(post.id);
   };
 
+  // Handle deleting a post
+  const handleDelete = async (postId, imageUrl) => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this post?');
+    if (confirmDelete) {
+      try {
+        await deleteDoc(doc(db, 'blogPosts', postId)); // Delete the post from Firestore
+
+        // If the post has an associated image, delete it from Firebase Storage
+        if (imageUrl) {
+          const imageRef = ref(storage, imageUrl);
+          await deleteObject(imageRef);
+        }
+
+        // Remove the post from the state
+        setBlogPosts((prevPosts) => prevPosts.filter((post) => post.id !== postId));
+      } catch (error) {
+        console.error('Error deleting post:', error);
+      }
+    }
+  };
+
   if (!user) {
     return <p>Loading...</p>;
   }
 
   return (
     <div>
-    <CustomNavbar />
+      <CustomNavbar />
 
-    <div className="blog-container">
-      <h2 className="blog-heading">{editingPostId ? 'Edit Blog Post' : 'Create Blog Post'}</h2>
-      
-      <form className="blog-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="blog-input"
-        />
-        <textarea
-          placeholder="Content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          className="blog-textarea"
-        ></textarea>
-        <input type="file" onChange={(e) => setImage(e.target.files[0])} className="blog-file-input" />
-        <button type="submit" className="blog-submit-btn">{editingPostId ? 'Update' : 'Submit'}</button>
-        {editingPostId && <button type="button" onClick={resetForm} className="blog-cancel-btn">Cancel</button>}
-      </form>
+      <div className="blog-container">
+        <h2 className="blog-heading">{editingPostId ? 'Edit Blog Post' : 'Create Blog Post'}</h2>
 
-      {progress > 0 && <p>Uploading: {progress}%</p>}
+        <form className="blog-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="blog-input"
+          />
+          <textarea
+            placeholder="Content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            className="blog-textarea"
+          ></textarea>
+          <input type="file" onChange={(e) => setImage(e.target.files[0])} className="blog-file-input" />
+          <button type="submit" className="blog-submit-btn">
+            {editingPostId ? 'Update' : 'Submit'}
+          </button>
+          {editingPostId && (
+            <button type="button" onClick={resetForm} className="blog-cancel-btn">
+              Cancel
+            </button>
+          )}
+        </form>
 
-      <h3 className="existing-posts-heading">Existing Blog Posts</h3>
-      <ul className="blog-posts-list">
-        {blogPosts.map((post) => (
-          <li key={post.id} className="blog-post-item" onClick={() => handleEdit(post)}>
-            {post.title}
-          </li>
-        ))}
-      </ul>
-    </div>
+        {progress > 0 && <p>Uploading: {progress}%</p>}
+
+        <h3 className="existing-posts-heading">Existing Blog Posts</h3>
+        <ul className="blog-posts-list">
+          {blogPosts.map((post) => (
+            <li key={post.id} className="blog-post-item">
+              <div onClick={() => handleEdit(post)}>{post.title}</div>
+              <button
+                className="delete-post-btn"
+                onClick={() => handleDelete(post.id, post.imageUrl)}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

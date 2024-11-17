@@ -95,3 +95,25 @@
     transform: scale(1.05);
   }
   
+  .gallery-item {
+    position: relative;
+  }
+  
+  .delete-image-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-image-btn:hover {
+    background-color: #c0392b;
+  }
+  

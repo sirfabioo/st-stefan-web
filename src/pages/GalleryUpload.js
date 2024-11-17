@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { addDoc, collection, serverTimestamp, getDocs, query, orderBy } from 'firebase/firestore';
+import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from 'firebase/storage';
+import { addDoc, collection, serverTimestamp, getDocs, query, orderBy, deleteDoc, doc } from 'firebase/firestore';
 import { auth, storage, db } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -30,7 +30,10 @@ const GalleryUpload = () => {
     const fetchImages = async () => {
       const q = query(collection(db, 'galleryImages'), orderBy('uploadedAt', 'desc'));
       const querySnapshot = await getDocs(q);
-      const galleryImages = querySnapshot.docs.map((doc) => doc.data());
+      const galleryImages = querySnapshot.docs.map((doc) => ({
+        id: doc.id, // Include the Firestore document ID
+        ...doc.data(),
+      }));
       setUploadedImages(galleryImages);
     };
     fetchImages();
@@ -62,11 +65,11 @@ const GalleryUpload = () => {
       async () => {
         const imageUrl = await getDownloadURL(uploadTask.snapshot.ref);
         try {
-          await addDoc(collection(db, 'galleryImages'), {
+          const docRef = await addDoc(collection(db, 'galleryImages'), {
             imageUrl,
             uploadedAt: serverTimestamp(),
           });
-          setUploadedImages((prevImages) => [{ imageUrl }, ...prevImages]);
+          setUploadedImages((prevImages) => [{ id: docRef.id, imageUrl }, ...prevImages]);
           setImage(null);
           setProgress(0);
         } catch (error) {
@@ -76,34 +79,60 @@ const GalleryUpload = () => {
     );
   };
 
+  const handleDelete = async (imageId, imageUrl) => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this image?');
+    if (confirmDelete) {
+      try {
+        // Delete image from Firestore
+        await deleteDoc(doc(db, 'galleryImages', imageId));
+
+        // Delete image from Firebase Storage
+        const imageRef = ref(storage, imageUrl);
+        await deleteObject(imageRef);
+
+        // Update the state to remove the deleted image
+        setUploadedImages((prevImages) => prevImages.filter((image) => image.id !== imageId));
+      } catch (error) {
+        console.error('Error deleting image:', error);
+      }
+    }
+  };
+
   if (!user) return <p>Loading...</p>;
 
   return (
     <div>
       <CustomNavbar />
-    <div className="gallery-upload-container">
-      <h2 className="gallery-upload-heading">Upload Images to Gallery</h2>
-      <form className="upload-form" onSubmit={handleSubmit}>
-        <input type="file" onChange={handleImageUpload} className="file-input" />
-        <button type="submit" className="upload-button">Upload</button>
-      </form>
-      {progress > 0 && (
-        <div className="progress-bar">
-          <div className="progress-bar-fill" style={{ width: `${progress}%` }}></div>
-          <span className="progress-bar-label">{progress}%</span>
+      <div className="gallery-upload-container">
+        <h2 className="gallery-upload-heading">Upload Images to Gallery</h2>
+        <form className="upload-form" onSubmit={handleSubmit}>
+          <input type="file" onChange={handleImageUpload} className="file-input" />
+          <button type="submit" className="upload-button">Upload</button>
+        </form>
+        {progress > 0 && (
+          <div className="progress-bar">
+            <div className="progress-bar-fill" style={{ width: `${progress}%` }}></div>
+            <span className="progress-bar-label">{progress}%</span>
+          </div>
+        )}
+        <div className="image-grid">
+          {uploadedImages.map((image) => (
+            <div key={image.id} className="gallery-item">
+              <img
+                src={image.imageUrl}
+                alt="Gallery"
+                className="gallery-image"
+              />
+              <button
+                className="delete-image-btn"
+                onClick={() => handleDelete(image.id, image.imageUrl)}
+              >
+                Delete
+              </button>
+            </div>
+          ))}
         </div>
-      )}
-      <div className="image-grid">
-        {uploadedImages.map((image, index) => (
-          <img
-            key={index}
-            src={image.imageUrl}
-            alt={`Gallery ${index}`}
-            className="gallery-image"
-          />
-        ))}
       </div>
-    </div>
     </div>
   );
 };
