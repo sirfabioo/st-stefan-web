@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
-  const [selectedImage, setSelectedImage] = useState(null); // For modal
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -29,7 +29,7 @@ const Gallery = () => {
   };
 
   return (
-    <>
+    <div className="page-wrapper">
       <CustomNavbar />
       <div className="gallery-container">
         <h2 className="gallery-heading">Bilder aus dem Schulleben</h2>
@@ -53,8 +53,8 @@ const Gallery = () => {
           </div>
         )}
       </div>
-      <Footer /> {/* Add your Footer component */}
-    </>
+      <Footer />
+    </div>
   );
 };
 

@@ -5,62 +5,126 @@ import CustomNavbar from '../components/CustomNavbar'; // Assuming you want to r
 import Footer from '../components/Footer'; // Assuming you want to reuse the footer
 
 const teachers = [
-    {
-        name: 'Daniela Unterholzer',
-        photo: '/teacher1.jpg',
-        bio: 'Stellv. Direktorin',
-        officeHours: '09:00 bis 11:00 Uhr',
-        subjects: ['Englisch', 'Biologie', 'Informatik'],
-        shortBio: 'Daniela ist seit 10 Jahren an unserer Schule und engagiert sich für die Entwicklung von jungen Talenten.'
-    },
-    {
-        name: 'Lehrer 1',
-        photo: '/teacher2.jpg',
-        bio: 'Deutsch Lehrer',
-        officeHours: '10:00 bis 12:00 Uhr',
-        subjects: ['Deutsch', 'Geschichte'],
-        shortBio: 'Lehrer 1 liebt es, Geschichte zu unterrichten und junge Köpfe zu inspirieren.'
-    },
-    {
-        name: 'Lehrerin 2',
-        photo: '/teacher3.jpg',
-        bio: 'Englisch Lehrerin',
-        officeHours: '11:00 bis 13:00 Uhr',
-        subjects: ['Englisch', 'Französisch'],
-        shortBio: 'Lehrerin 2 ist eine begeisterte Englischlehrerin und motiviert ihre Schüler, ihr Bestes zu geben.'
-    },
-    {
-        name: 'Lehrer 3',
-        photo: '/teacher4.jpg',
-        bio: 'Sportlehrer',
-        officeHours: '12:00 bis 14:00 Uhr',
-        subjects: ['Sport', 'Biologie'],
-        shortBio: 'Lehrer 3 ist ein begeisterter Sportlehrer und motiviert seine Schüler, fit und gesund zu bleiben.'
-    },
-    {
-        name: 'Lehrerin 4',
-        photo: '/teacher5.jpg',
-        bio: 'Musik Lehrerin',
-        officeHours: '13:00 bis 15:00 Uhr',
-        subjects: ['Musik', 'Kunst'],
-        shortBio: 'Lehrerin 4 ist eine talentierte Musikerin und inspiriert ihre Schüler, ihre kreativen Fähigkeiten zu entfalten.'
-    },
-    {
-        name: 'Lehrer 5',
-        photo: '/teacher6.jpg',
-        bio: 'Informatik Lehrer',
-        officeHours: '14:00 bis 16:00 Uhr',
-        subjects: ['Informatik', 'Technik'],
-        shortBio: 'Lehrer 5 ist ein erfahrener Informatiklehrer und motiviert seine Schüler, sich für Technologie zu begeistern.'
-    },
-    {
-        name: 'Lehrerin 6',
-        photo: '/teacher7.jpg',
-        bio: 'Biologie Lehrerin',
-        officeHours: '15:00 bis 17:00 Uhr',
-        subjects: ['Biologie', 'Chemie'],
-        shortBio: 'Lehrerin 6 ist eine leidenschaftliche Biologin und motiviert ihre Schüler, die Wunder der Natur zu entdecken.'
-    },
+  {
+      name: 'Jürgen Nickel',
+      photo: '/director.jpg',
+      bio: 'Direktor',
+      officeHours: '08:00 bis 10:00 Uhr',
+      subjects: ['Schulmanagement', 'Mathematik'],
+      shortBio: 'Jürgen leitet die Schule mit viel Engagement und einer Vision für eine zukunftsorientierte Bildung.'
+  },
+  {
+      name: 'Daniela Unterholzer',
+      photo: '/deputy-director.jpg',
+      bio: 'Stellv. Direktorin',
+      officeHours: '09:00 bis 11:00 Uhr',
+      subjects: ['Englisch', 'Biologie', 'Informatik'],
+      shortBio: 'Daniela ist seit 10 Jahren an unserer Schule und engagiert sich für die Entwicklung von jungen Talenten.'
+  },
+  {
+      name: 'Prof. Mag. Natalie Arzberger',
+      photo: '/teacher1.jpg',
+      bio: 'Lehrerin',
+      officeHours: '10:00 bis 12:00 Uhr',
+      subjects: ['Deutsch', 'Englisch'],
+      shortBio: 'Natalie begeistert ihre Schüler mit kreativen Lehrmethoden und inspirierenden Geschichten.'
+  },
+  {
+      name: 'Prof. Anja Daveid',
+      photo: '/teacher2.jpg',
+      bio: 'Lehrerin',
+      officeHours: '10:00 bis 12:00 Uhr',
+      subjects: ['Kunst', 'Mathematik'],
+      shortBio: 'Anja verbindet Kunst und Mathematik, um den Schülern neue Perspektiven zu bieten.'
+  },
+  {
+      name: 'Prof. Sandra Dreier',
+      photo: '/teacher3.jpg',
+      bio: 'Lehrerin',
+      officeHours: '10:00 bis 12:00 Uhr',
+      subjects: ['Biologie', 'Sport'],
+      shortBio: 'Sandra motiviert ihre Schüler zu einem gesunden und aktiven Lebensstil.'
+  },
+  {
+      name: 'Prof. Victoria Freidl',
+      photo: '/teacher4.jpg',
+      bio: 'Lehrerin',
+      officeHours: '11:00 bis 13:00 Uhr',
+      subjects: ['Deutsch', 'Französisch'],
+      shortBio: 'Victoria begeistert ihre Schüler für Sprachen und kulturellen Austausch.'
+  },
+  {
+      name: 'Robert Haberfellner',
+      photo: '/teacher5.jpg',
+      bio: 'Lehrer',
+      officeHours: '11:00 bis 13:00 Uhr',
+      subjects: ['Mathematik', 'Physik'],
+      shortBio: 'Robert ist ein erfahrener Mathematiklehrer und bringt komplexe Themen verständlich näher.'
+  },
+  {
+      name: 'Sevala Halilovic',
+      photo: '/teacher6.jpg',
+      bio: 'Lehrerin',
+      officeHours: '12:00 bis 14:00 Uhr',
+      subjects: ['Chemie', 'Biologie'],
+      shortBio: 'Sevala inspiriert ihre Schüler mit spannenden Experimenten und innovativen Ideen.'
+  },
+  {
+      name: 'Prof. Andrea Haßler',
+      photo: '/teacher7.jpg',
+      bio: 'Lehrerin',
+      officeHours: '13:00 bis 15:00 Uhr',
+      subjects: ['Englisch', 'Geschichte'],
+      shortBio: 'Andrea liebt es, Geschichte und Sprache miteinander zu verbinden.'
+  },
+  {
+      name: 'Tatjana Igerc',
+      photo: '/teacher8.jpg',
+      bio: 'Lehrerin',
+      officeHours: '14:00 bis 16:00 Uhr',
+      subjects: ['Geographie', 'Englisch'],
+      shortBio: 'Tatjana vermittelt den Schülern ein tiefes Verständnis der Welt durch Geographie.'
+  },
+  {
+      name: 'Susanne Kopp-Jörke',
+      photo: '/teacher9.jpg',
+      bio: 'Lehrerin',
+      officeHours: '15:00 bis 17:00 Uhr',
+      subjects: ['Deutsch', 'Kunst'],
+      shortBio: 'Susanne fördert die Kreativität und Ausdrucksfähigkeit ihrer Schüler.'
+  },
+  {
+      name: 'Prof. Sabrina Stefanie Koroschetz',
+      photo: '/teacher10.jpg',
+      bio: 'Lehrerin',
+      officeHours: '08:00 bis 10:00 Uhr',
+      subjects: ['Biologie', 'Sport'],
+      shortBio: 'Sabrina motiviert ihre Schüler, körperlich und geistig fit zu bleiben.'
+  },
+  {
+      name: 'Barbara Leopold-Kirisits',
+      photo: '/teacher11.jpg',
+      bio: 'Lehrerin',
+      officeHours: '09:00 bis 11:00 Uhr',
+      subjects: ['Musik', 'Mathematik'],
+      shortBio: 'Barbara kombiniert Mathematik und Musik, um Schülern neue Denkweisen zu vermitteln.'
+  },
+  {
+      name: 'Prof. Verena Maria Lubi',
+      photo: '/teacher12.jpg',
+      bio: 'Lehrerin',
+      officeHours: '10:00 bis 12:00 Uhr',
+      subjects: ['Englisch', 'Kunst'],
+      shortBio: 'Verena begeistert ihre Schüler mit kreativen Projekten im Kunst- und Englischunterricht.'
+  },
+  {
+      name: 'Klaudija Marjanovic',
+      photo: '/teacher13.jpg',
+      bio: 'Lehrerin',
+      officeHours: '11:00 bis 13:00 Uhr',
+      subjects: ['Deutsch', 'Geographie'],
+      shortBio: 'Klaudija inspiriert ihre Schüler mit spannenden Unterrichtseinheiten in Geographie und Deutsch.'
+  },
 ];
 
 const Teachers = () => {
