@@ -1,20 +1,7 @@
-/* src/styles/CustomNavbar.css */
-
-/* Ensure even distribution between left, center, and right containers */
-.nav-container-left, .nav-container-right {
-  width: 40%;
-  padding-left: 7rem;
-  padding-right: 7rem
-}
-
-.logo-container {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-}
-
+/* General Nav links styling */
 .navbar-nav .nav-link {
   color: #424242; /* Custom dark color for text */
+  font-size: 1rem;
   margin-right: 1rem; /* Adjust spacing between links */
 }
 
@@ -22,37 +9,55 @@
   color: #ca6411; /* Hover color for links */
 }
 
-.navbar .login-btn {
-  background-color: var(--midpoint-red);
-  color: white;
+/* Dashboard/Login button */
+.dashboard-btn,
+.login-btn {
+  background-color: var(--midpoint-red) !important;
+  color: white !important;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem !important;
   border-radius: 5px;
   margin-left: 1rem;
+  font-size: 0.9rem;
+  width: auto; /* Ensure the button is sized to fit its content */
+  max-width: 150px; /* Optional: Restrict maximum width */
+  text-align: center; /* Ensure text is centered */
 }
 
-.navbar .login-btn:hover {
-  background-color: var(--imperial-red);
-  color: white;
+.dashboard-btn:hover,
+.login-btn:hover {
+  background-color: var(--imperial-red) !important;
+  color: white !important;
 }
 
-.navbar-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  color: #9d1006ff !important;
-  margin-top: 0.5rem;
-  font-weight: 1000;
-}
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  /* Ensure hamburger menu content aligns to the right */
+  .navbar-collapse {
+    text-align: right !important;
+  }
 
-.dashboard-btn {
-  background-color: var(--midpoint-red);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  margin-left: 1rem;
-}
+  /* Align links and buttons to the right */
+  .navbar-nav {
+    flex-direction: column !important; /* Stack links vertically */
+    align-items: flex-end !important; /* Align links to the right */
+    gap: 0.5rem; /* Add spacing between links */
+    margin-left: auto !important; /* Push content to the right */
+    padding-right: 1rem; /* Add some padding to the right */
+  }
 
-.dashboard-btn:hover {
-  background-color: var(--imperial-red);
+  .navbar-nav .nav-link {
+    margin: 0; /* Reset margin for clean alignment */
+    text-align: right; /* Right-align the text */
+    width: 100%; /* Optional: make links span full width for better tap targets */
+  }
+
+  .dashboard-btn,
+  .login-btn {
+    margin: 0 !important;
+    align-self: flex-end !important;
+    text-align: center;
+    width: auto; /* Prevent stretching */
+    max-width: 150px; /* Maintain consistent size */
+  }
 }

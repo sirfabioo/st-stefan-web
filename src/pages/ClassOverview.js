@@ -3,6 +3,7 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase';
 import '../styles/ClassOverview.css';
 import CustomNavbar from '../components/CustomNavbar';
+import Footer from '../components/Footer';
 
 const ClassOverview = () => {
   const [classes, setClasses] = useState([]);
@@ -87,6 +88,7 @@ const ClassOverview = () => {
           </div>
         )}
       </div>
+      <Footer />
     </>
   );
 };

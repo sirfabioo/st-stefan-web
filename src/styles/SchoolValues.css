@@ -1,47 +1,77 @@
 .values-section {
-    padding: 10rem;
-    background-color: var(--light-gray);
-    text-align: center;
+  padding: 5rem 2rem; /* Adjusted padding for smaller screens */
+  background-color: var(--light-gray);
+  text-align: center;
+}
+
+.values-section h2 {
+  font-family: var(--font-headline);
+  color: var(--primary-color);
+  font-size: 2rem; /* Slightly smaller font size */
+  margin-bottom: 2rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 2rem;
+}
+
+.value-box {
+  background-color: white;
+  padding: 1.5rem; /* Slightly smaller padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center-align the content */
+}
+
+.value-box img {
+  width: 50px; /* Reduced size for icons */
+  margin-bottom: 1rem;
+}
+
+.value-box h3 {
+  font-family: var(--font-headline);
+  color: var(--primary-color);
+  font-size: 1.25rem; /* Slightly smaller font size */
+  margin-bottom: 0.5rem; /* Add some spacing below the title */
+}
+
+.value-box p {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  font-size: 0.9rem; /* Adjust font size for smaller screens */
+}
+
+.icon-style {
+  font-size: 40px; /* Adjusted icon size for smaller screens */
+  color: var(--midpoint-red);
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .values-section {
+    padding: 3rem 1rem;
   }
-  
+
   .values-section h2 {
-    font-family: var(--font-headline);
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.75rem; /* Smaller heading size for smaller screens */
   }
-  
+
   .values-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1rem; /* Reduced gap between items */
   }
-  
+
   .value-box {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem; /* Less padding for smaller screens */
   }
-  
-  .value-box img {
-    width: 60px;
-    margin-bottom: 1rem;
-  }
-  
+
   .value-box h3 {
-    font-family: var(--font-headline);
-    color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.15rem;
   }
-  
-  .value-box p {
-    font-family: var(--font-body);
-    color: var(--text-color);
+
+  .icon-style {
+    font-size: 35px;
   }
-  
-    .icon-style {
-        font-size: 50px;
-        color: var(--midpoint-red);
-        margin-bottom: 1rem;
-    }
+}

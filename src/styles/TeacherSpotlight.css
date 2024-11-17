@@ -1,44 +1,105 @@
 .teacher-spotlight-section {
-    padding: 10rem;
-    background-color: var(--light-gray);
-  }
-  
+  padding: 5rem 1rem;
+  background-color: var(--light-gray);
+}
+
+.teacher-spotlight-section h2 {
+  font-family: var(--font-headline);
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid with max 4 columns */
+  gap: 2rem;
+  justify-items: center; /* Center-align items in the grid */
+  text-align: center;
+}
+
+.teacher-card {
+  background-color: white;
+  padding: 1.5rem; /* Adjust padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effects */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align content vertically */
+  justify-content: center;
+  height: 300px; /* Uniform card height */
+  width: 100%; /* Take up full width within the column */
+  max-width: 250px; /* Limit card width */
+}
+
+.teacher-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+.teacher-card h4 {
+  font-family: var(--font-headline);
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+  font-size: 1.2rem; /* Slightly reduce font size */
+}
+
+.teacher-card p {
+  font-family: var(--font-body);
+  color: var(--text-color);
+  font-size: 1rem; /* Adjust font size for readability */
+  margin-top: 0.5rem;
+}
+
+.icon-style {
+  font-size: 50px; /* Icon size for larger screens */
+  color: var(--midpoint-red); /* Apply your custom red color */
+  margin-bottom: 1rem; /* Add some space below the icon */
+}
+
+@media (max-width: 768px) {
   .teacher-spotlight-section h2 {
-    font-family: var(--font-headline);
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+    font-size: 1.8rem; /* Adjust heading size for smaller screens */
   }
-  
-  .teacher-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    text-align: center;
-  }
-  
+
   .teacher-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .teacher-card h4 {
-    font-family: var(--font-headline);
-    color: var(--primary-color);
-  }
-  
-  .teacher-card p {
-    font-family: var(--font-body);
-    color: var(--text-color);
+    padding: 1rem; /* Reduce padding for smaller screens */
+    height: auto; /* Allow cards to expand based on content */
   }
 
   .icon-style {
-    font-size: 50px; /* Change the size */
-    color: var(--midpoint-red);  /* Apply your custom red color */
-    margin-bottom: 1rem; /* Add some space below the icon */
+    font-size: 40px; /* Reduce icon size for smaller screens */
   }
-  
-  
+
+  .teacher-card h4 {
+    font-size: 1.1rem; /* Adjust font size for smaller screens */
+  }
+
+  .teacher-card p {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-spotlight-section h2 {
+    font-size: 1.5rem; /* Smaller heading for very small screens */
+  }
+
+  .teacher-card {
+    padding: 0.8rem; /* Compact cards */
+  }
+
+  .icon-style {
+    font-size: 35px; /* Smaller icons for small screens */
+  }
+
+  .teacher-card h4 {
+    font-size: 1rem; /* Adjust font size further */
+  }
+
+  .teacher-card p {
+    font-size: 0.85rem; /* Compact paragraph text */
+  }
+}

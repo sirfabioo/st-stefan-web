@@ -1,54 +1,83 @@
 .academic-overview-section {
-    padding: 4rem 0;
-}
-
-.academic-overview-section h2 {
+    padding: 2rem 1rem; /* Reduced padding for better fit */
+  }
+  
+  .academic-overview-section h2 {
     font-family: var(--font-headline);
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem; /* Adjusted for smaller screens */
     color: var(--primary-color);
-    margin-bottom: 2rem;
-}
-
-.accordion {
-    max-width: 70vh;
+    margin-bottom: 1.5rem;
+  }
+  
+  .accordion {
+    max-width: 20%; /* Adjust for smaller screens */
     margin: 0 auto;
     border-radius: 8px;
-    overflow: hidden; /* Ensures corners remain rounded even when expanded */
-}
-
-.accordion-item {
-    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  
+  .accordion-item {
+    margin-bottom: 0.8rem; /* Slightly tighter spacing */
     border-radius: 8px;
-    overflow: hidden; /* Prevents overflow from affecting border radius */
-}
-
-.accordion-header {
+    overflow: hidden;
+  }
+  
+  .accordion-header {
     background-color: var(--primary-color);
     color: white;
-    padding: 1rem;
+    padding: 0.8rem 1rem; /* Adjusted padding */
     cursor: pointer;
-    border-radius: 8px; /* Ensures all corners stay rounded */
+    border-radius: 8px;
     box-sizing: border-box;
-    transition: background-color 0.3s ease; /* Adds hover effect */
+    transition: background-color 0.3s ease;
     text-align: center;
-    font-size: 1.3rem;
-}
-
-.accordion-header:hover {
-    background-color: var(--secondary-color); /* Adds hover color effect */
-}
-
-.accordion-content {
+    font-size: 1rem; /* Adjusted font size */
+    line-height: 1.4; /* Better text alignment */
+  }
+  
+  .accordion-header:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .accordion-content {
     background-color: white;
-    border-radius: 0 0 8px 8px; /* Only bottom corners are rounded */
     color: var(--text-color);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-}
-
-.accordion-content.open {
-    max-height: 600px; /* Adjust this height based on content */
-    padding: 1rem;
-}
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-radius: 0 0 8px 8px;
+    padding: 0 1rem; /* Remove top and bottom padding */
+  }
+  
+  .accordion-content.open {
+    max-height: 300px; /* Ensure it doesn't exceed visible limits */
+    padding: 0.8rem 1rem; /* Adjust padding */
+  }
+  
+  @media (max-width: 768px) {
+    .academic-overview-section h2 {
+      font-size: 1.8rem; /* Reduced font size for smaller devices */
+      margin-bottom: 1rem;
+    }
+  
+    .accordion {
+      max-width: 90%; /* Slightly narrower for smaller screens */
+    }
+  
+    .accordion-header {
+      font-size: 0.9rem; /* Smaller header size for mobile */
+      padding: 0.6rem 0.8rem; /* Reduced padding */
+    }
+  
+    .accordion-content {
+      font-size: 0.85rem; /* Slightly smaller font size */
+    }
+  
+    .accordion-content.open {
+      max-height: 200px; /* Reduced max height for compact content */
+    }
+  }
+  

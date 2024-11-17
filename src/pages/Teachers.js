@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Teachers.css'; // New CSS file
 import { IoPersonCircleSharp } from 'react-icons/io5';
 import CustomNavbar from '../components/CustomNavbar'; // Assuming you want to reuse the custom navbar
+import Footer from '../components/Footer'; // Assuming you want to reuse the footer
 
 const teachers = [
     {
@@ -70,7 +71,7 @@ const Teachers = () => {
         <h2 className="teachers-page-heading">Unser Lehrteam</h2>
         <div className="teachers-grid">
           {teachers.map((teacher, index) => (
-            <div className="teacher-card" key={index}>
+            <div className="teacher-card-variant" key={index}>
               <IoPersonCircleSharp className="icon-style" />
               <h4>{teacher.name}</h4>
               <p className="teacher-bio">{teacher.bio}</p>
@@ -87,6 +88,7 @@ const Teachers = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

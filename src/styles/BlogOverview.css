@@ -1,84 +1,125 @@
-/* src/styles/BlogOverview.css */
-
 .blog-overview-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-    margin-bottom: 5rem;
-  }
-  
-  .blog-overview-heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: #471613;  /* Dark red color */
-    margin-bottom: 2rem;
-  }
-  
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* Two equal-width columns */
-    gap: 2rem;  /* Space between posts */
-    justify-items: center;  /* Centers the posts within the grid */
-  }
-  
-  .blog-card {
-    background-color: var(--cadet-gray);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Subtle shadow */
-    text-align: left;
-    width: 100%;  /* Full width of the grid column */
-    max-width: 550px;  /* Optional max width */
-    overflow: hidden;  /* Ensures the image respects the border-radius */
-    display: flex;
-    flex-direction: column; /* Stacks image and content vertically */
-    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
-  /* Corrected hover syntax */
-  .blog-card:hover {
-      filter: brightness(110%); /* Slightly brighter on hover */
-      transform: scale(1.02); /* Adds a subtle zoom effect */
+.blog-overview-heading {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #471613; /* Dark red color */
+  margin-bottom: 2rem;
+}
+
+/* Responsive grid layout */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+  gap: 2rem; /* Space between posts */
+  justify-items: center; /* Centers the posts within the grid */
+}
+
+/* Responsive blog card styling */
+.blog-card {
+  background-color: var(--cadet-gray);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  text-align: left;
+  width: 100%; /* Full width of the grid column */
+  max-width: 550px; /* Optional max width */
+  overflow: hidden; /* Ensures the image respects the border-radius */
+  display: flex;
+  flex-direction: column; /* Stacks image and content vertically */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+.blog-card:hover {
+  filter: brightness(110%); /* Slightly brighter on hover */
+  transform: scale(1.02); /* Adds a subtle zoom effect */
+}
+
+/* Blog image styling */
+.blog-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px; /* Matches the card’s border-radius */
+  border-top-right-radius: 8px; /* Matches the card’s border-radius */
+  margin: 0; /* Remove any margin */
+  display: block;
+  filter: grayscale(100%) contrast(1) brightness(0.8) sepia(100%) hue-rotate(300deg);
+}
+
+/* Blog title styling */
+.blog-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #471613;
+  margin: 2rem 0 1rem 0; /* Keep space between image and text */
+  padding: 0 2rem; /* Add padding to the sides of the title */
+}
+
+.blog-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-title a:hover {
+  color: #fb3640; /* Hover color change */
+}
+
+/* Blog excerpt styling */
+.blog-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #424242;
+  margin-bottom: 1.5rem; /* Adds space at the bottom of each post */
+  padding: 0 2rem; /* Add padding to the sides of the excerpt */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .blog-overview-heading {
+    font-size: 2rem; /* Slightly smaller font size for medium screens */
   }
 
-  
-  /* Adjust the image to cover the full width of the card */
+  .blog-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 1.5rem; /* Reduce spacing */
+  }
+
+  .blog-card {
+    margin: 0 auto; /* Center cards on smaller screens */
+  }
+
   .blog-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 8px;  /* Matches the card’s border-radius */
-    border-top-right-radius: 8px; /* Matches the card’s border-radius */
-    margin: 0;  /* Remove any margin */
-    display: block;
-    /* Give the image a red color */
-    filter: grayscale(100%) contrast(1) brightness(0.8) sepia(100%) hue-rotate(300deg);
+    height: 150px; /* Smaller image height */
   }
-  
+
   .blog-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: #471613;
-    margin: 2rem 0 1rem 0; /* Keep space between image and text */
-    padding: 0 2rem; /* Add padding to the sides of the title */
+    font-size: 1.3rem; /* Slightly smaller title font */
   }
-  
-  .blog-title a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .blog-title a:hover {
-    color: #fb3640;  /* Hover color change */
-  }
-  
+
   .blog-excerpt {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: #424242;
-    margin-bottom: 1.5rem; /* Adds space at the bottom of each post */
-    padding: 0 2rem; /* Add padding to the sides of the excerpt */
+    font-size: 0.9rem; /* Reduce excerpt font size */
   }
-  
+}
+
+@media (max-width: 576px) {
+  .blog-overview-heading {
+    font-size: 1.8rem; /* Further reduce heading size */
+  }
+
+  .blog-title {
+    font-size: 1.2rem; /* Adjust title size for mobile */
+  }
+
+  .blog-excerpt {
+    font-size: 0.85rem; /* Adjust excerpt font for readability */
+  }
+}

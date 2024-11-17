@@ -1,14 +1,10 @@
-/* src/styles/SchoolProgramShort.css */
-
 .simple-bar {
   background-color: #471613;  /* Dark red background */
   color: white;
   padding: 2rem 0;
   text-align: center;
   width: 100%;
-  padding-right: 6rem;
-  /* give the text a shadow with #932B2B */
-  text-shadow: 2px 4px 6px #932b2b;
+  text-shadow: 2px 4px 6px #932b2b; /* Text shadow for a subtle effect */
 }
 
 .simple-bar-variant {
@@ -17,7 +13,6 @@
   text-align: right;
   width: 100%;
   padding-right: 6rem;
-  /* Add a smoother gradient with redder shades to avoid orange */
   margin-bottom: 10rem;
 }
 
@@ -42,21 +37,20 @@
 
 .program-features {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);  /* 5 equal parts */
-  gap: 2rem;  /* Space between each box */
+  grid-template-columns: repeat(5, 1fr); /* 5 equal parts */
+  gap: 2rem; /* Space between each box */
   padding: 2rem;
-  background-color: #471613;  /* Same deep red background */
+  background-color: #471613; /* Same deep red background */
   color: white;
-  
 }
 
 .feature-box {
-  background-color: var(--midpoint-red);  /* Slightly darker red for the boxes */
+  background-color: var(--midpoint-red); /* Slightly darker red for the boxes */
   padding: 2rem;
   position: relative;
   border-radius: 8px;
   text-align: left;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
 .feature-number {
@@ -78,20 +72,73 @@
 .cta-btn {
   margin-top: 2rem;
   background-color: white;
-  color: #471613;  /* Button with dark red text */
-  padding: 0.75rem 0;  /* Adjusted padding: vertical only */
+  color: #471613; /* Button with dark red text */
+  padding: 0.75rem 0; /* Adjusted padding: vertical only */
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  width: 100%;  /* Make the button take the full width */
-  display: block;  /* Ensure it's a block-level element */
-  text-align: center;  /* Center the button text */
-  transition: background-color 0.3s, color 0.3s;  /* Smooth color transition */
+  width: 100%; /* Make the button take the full width */
+  display: block; /* Ensure it's a block-level element */
+  text-align: center; /* Center the button text */
+  transition: background-color 0.3s, color 0.3s; /* Smooth color transition */
 }
 
 .cta-btn:hover {
-  background-color: #fb3640;  /* Change button background on hover */
+  background-color: #fb3640; /* Change button background on hover */
   color: white;
 }
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .program-features {
+    grid-template-columns: repeat(3, 1fr); /* Reduce to 3 columns */
+    gap: 1.5rem; /* Slightly reduce spacing */
+  }
 
+  .feature-box {
+    padding: 1.5rem; /* Reduce padding for smaller screens */
+  }
+
+  .feature-box p {
+    font-size: 1.1rem; /* Slightly smaller font for readability */
+  }
+}
+
+@media (max-width: 768px) {
+  .program-features {
+    grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns */
+    gap: 1rem; /* Reduce spacing between boxes */
+  }
+
+  .simple-bar {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .bar-heading {
+    font-size: 2.5rem; /* Smaller heading size for mobile */
+  }
+
+  .feature-box {
+    padding: 1rem; /* Further reduce padding */
+  }
+}
+
+@media (max-width: 576px) {
+  .program-features {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 1rem; /* Minimal spacing between boxes */
+  }
+
+  .feature-box {
+    text-align: center; /* Center-align content for single-column layout */
+  }
+
+  .feature-box p {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .cta-btn {
+    font-size: 0.9rem; /* Adjust button font size */
+    padding: 0.5rem 0; /* Reduce button padding */
+  }
+}

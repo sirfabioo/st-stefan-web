@@ -14,6 +14,8 @@ import ClassOverview from "./pages/ClassOverview.js";
 import AdminClasses from "./pages/AdminClasses.js";
 import Welcome from "./pages/Welcome.js";
 import BlogView from "./pages/BlogView.js";
+import Impressum from "./pages/Impressum.js";
+import Privacy from "./pages/Privacy.js";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/upload-gallery" element={<GalleryUpload />} />
         <Route path="/classes" element={<ClassOverview />} />
         <Route path="/admin/classes" element={<AdminClasses />} />
+        <Route path="/impressum" element={<Impressum />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </Router>
   );

@@ -1,52 +1,105 @@
-/* src/styles/Welcome.css */
-
 .welcome-content {
-    display: flex;
-    align-items: center;  /* Vertically center the content */
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;  /* Center the content horizontally */
-    margin-top: 5rem;
-    margin-bottom: 10rem;
+  display: flex;
+  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+  align-items: center; /* Vertically center the content */
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the content horizontally */
+  margin-top: 5rem;
+  margin-bottom: 5rem; /* Adjusted margin for smaller screens */
+}
+
+.welcome-text {
+  flex: 1; /* Allow flexible width */
+  min-width: 300px; /* Ensure a minimum width for readability */
+  max-width: 60%; /* Restrict the text section to 60% of the container */
+  padding-right: 2rem; /* Add space between the text and the image */
+  margin-bottom: 2rem; /* Add spacing for wrapping layout on smaller screens */
+}
+
+.welcome-image {
+  flex: 1; /* Allow flexible width */
+  min-width: 300px; /* Ensure a minimum width for images */
+  max-width: 40%; /* Restrict the image section to 40% of the container */
+  margin-left: 2rem;
+}
+
+.welcome-pic {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Add a slight border radius if desired */
+}
+
+.welcome-quote {
+  font-family: 'DM Serif Display', serif; /* Headline font */
+  font-size: 4.5rem; /* Increase font size for headline */
+  font-weight: 400; /* Make it bolder */
+  color: var(--midpoint-red);
+  margin-bottom: 1rem; /* Add space between heading and subheading */
+}
+
+.welcome-heading {
+  font-family: 'DM Serif Display', serif; /* Headline font */
+  font-size: 2.5rem; /* Increase font size for headline */
+  font-weight: 400; /* Make it bolder */
+  color: black;
+  margin-bottom: 1rem; /* Add space between heading and subheading */
+}
+
+.welcome-subheading {
+  margin-top: 1.5rem; /* Add space between heading and subheading */
+  font-family: 'Inter', sans-serif; /* Body font */
+  font-size: 1.125rem; /* Slightly larger text */
+  color: var(--text-custom-dark-gray); /* Use the custom gray color */
+  text-align: left;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .welcome-content {
+      flex-direction: column; /* Stack content vertically on medium screens */
+      align-items: center;
   }
-  
+
   .welcome-text {
-    max-width: 60%;  /* Restrict the text section to 50% of the container */
-    padding-right: 2rem;  /* Add space between the text and the image */
+      max-width: 100%; /* Allow full width for smaller screens */
+      padding-right: 0; /* Remove extra spacing */
+      text-align: center; /* Center-align text */
   }
-  
+
   .welcome-image {
-    max-width: 40%;  /* Restrict the image section to 40% of the container */
-    margin-left: 2rem;
+      max-width: 100%; /* Allow full width for images */
+      margin-left: 0; /* Remove left margin */
   }
-  
-  .welcome-pic {
-    width: 120%;  /* Make the image responsive */
-    height: auto;  /* Maintain aspect ratio */
-    border-radius: 8px;  /* Add a slight border radius if desired */
-  }
-  
+
   .welcome-quote {
-    font-family: 'DM Serif Display', serif;  /* Headline font */
-    font-size: 4.5rem;  /* Increase font size for headline */
-    font-weight: 400;  /* Make it bolder */
-    color: var(--midpoint-red);
-    margin-bottom: 1rem;  /* Add space between heading and subheading */
+      font-size: 3rem; /* Reduce headline size for medium screens */
   }
 
   .welcome-heading {
-    font-family: 'DM Serif Display', serif;  /* Headline font */
-    font-size: 2.5rem;  /* Increase font size for headline */
-    font-weight: 400;  /* Make it bolder */
-    color: black;
-    margin-bottom: 1rem;  /* Add space between heading and subheading */
+      font-size: 2rem; /* Adjust size for better readability */
   }
-  
+
   .welcome-subheading {
-    margin-top: 1.5rem;  /* Add space between heading and subheading */
-    font-family: 'Inter', sans-serif;  /* Body font */
-    font-size: 1.125rem;  /* Slightly larger text */
-    color: var(--text-custom-dark-gray);  /* Use the custom gray color */
-    text-align: left;
+      font-size: 1rem; /* Adjust font size for smaller screens */
   }
-  
+}
+
+@media (max-width: 576px) {
+  .welcome-quote {
+      font-size: 2.5rem; /* Reduce headline size for small screens */
+  }
+
+  .welcome-heading {
+      font-size: 1.75rem; /* Further reduce size */
+  }
+
+  .welcome-subheading {
+      font-size: 0.9rem; /* Smaller text for small screens */
+  }
+}

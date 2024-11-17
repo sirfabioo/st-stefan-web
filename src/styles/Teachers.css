@@ -3,7 +3,7 @@
   margin: 5rem auto;
   padding: 4rem 2rem; /* Adjust padding to add space */
   background-color: var(--light-gray);
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 .teachers-page-heading {
@@ -16,22 +16,50 @@
 
 .teachers-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust to display 3 columns */
+  grid-template-columns: repeat(3, 1fr); /* Display 3 columns by default */
   gap: 2rem;
 }
 
-.teacher-card {
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  .teachers-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for tablets */
+    gap: 1.5rem; /* Slightly smaller gap */
+  }
+}
+
+@media (max-width: 480px) {
+  .teachers-grid {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+    gap: 1rem; /* Compact gap */
+  }
+}
+
+.teacher-card-variant {
   background-color: white;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 250px;
 }
 
-.teacher-card h4 {
+.teacher-card-variant:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+}
+
+.teacher-card-variant h4 {
   font-family: var(--font-headline);
   color: var(--primary-color);
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .teacher-bio {
@@ -39,11 +67,13 @@
   font-weight: 500;
   color: var(--secondary-color);
   margin-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
-.teacher-card p {
+.teacher-card-variant p {
   font-family: var(--font-body);
   color: var(--text-color);
+  font-size: 1rem;
 }
 
 .teacher-short-bio {
@@ -51,10 +81,57 @@
   font-style: italic;
   color: var(--text-color);
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .icon-style {
   font-size: 50px;
   color: var(--midpoint-red);
   margin-bottom: 1rem;
+}
+
+/* Adjust heading and spacing for smaller screens */
+@media (max-width: 768px) {
+  .teachers-page-heading {
+    font-size: 2.5rem;
+  }
+
+  .teacher-card-variant h4 {
+    font-size: 1.4rem;
+  }
+
+  .teacher-bio {
+    font-size: 1rem;
+  }
+
+  .teacher-card-variant p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teachers-page-container {
+    padding: 2rem 1rem; /* Compact padding */
+  }
+
+  .teachers-page-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .teacher-card-variant h4 {
+    font-size: 1.3rem;
+  }
+
+  .teacher-bio {
+    font-size: 0.9rem;
+  }
+
+  .teacher-card-variant p {
+    font-size: 0.85rem;
+  }
+
+  .teacher-short-bio {
+    font-size: 0.85rem;
+  }
 }

@@ -6,6 +6,8 @@ import TeacherSpotlight from '../components/TeacherSpotlight';
 import CTASection from '../components/CTASection';
 import CustomNavbar from '../components/CustomNavbar';
 import SchoolHistory from '../components/SchoolHistory';
+import Footer from '../components/Footer';
+import '../styles/SchoolInfo.css';
 
 const SchoolInfo = () => {
   return (
@@ -17,6 +19,7 @@ const SchoolInfo = () => {
         <AcademicOverview />
         <TeacherSpotlight />
         <CTASection />
+        <Footer />
     </div>
   );
 };

@@ -1,0 +1,52 @@
+/* Set up the full-page layout */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Push the footer to the bottom if content is short */
+  .main-content {
+    flex: 1;
+  }
+  
+  /* Privacy container styles */
+  .privacy-container-variant {
+    max-width: 800px;
+    margin: 2rem auto; /* Add some spacing at the top and bottom */
+    padding: 2rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .privacy-container-variant h1 {
+    font-family: var(--font-headline);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center; /* Center-align the main heading */
+  }
+  
+  .privacy-container-variant h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    color: var(--secondary-color);
+  }
+  
+  .privacy-container-variant p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .privacy-container-variant a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+  }
+  
+  .privacy-container-variant a:hover {
+    text-decoration: underline;
+  }
+  

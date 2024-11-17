@@ -3,6 +3,7 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase';
 import '../styles/Gallery.css';
 import CustomNavbar from '../components/CustomNavbar';
+import Footer from '../components/Footer';
 
 const Gallery = () => {
   const [images, setImages] = useState([]);
@@ -52,6 +53,7 @@ const Gallery = () => {
           </div>
         )}
       </div>
+      <Footer /> {/* Add your Footer component */}
     </>
   );
 };

@@ -6,6 +6,8 @@ import SchoolProgramShort from "../components/SchoolProgramShort";
 import BlogOverview from "../components/BlogOverview";
 import SocialMedia from "../components/SocialMedia";
 import CarouselComponent from "../components/CarouselComponent";
+import Footer from "../components/Footer";
+import VideoPlayer from "../components/Videoplayer";
 
 const Welcome = () => {
   return (
@@ -38,11 +40,16 @@ const Welcome = () => {
 
       <BlogOverview />
 
+      <VideoPlayer
+        videoPath="videos/ststefan.mp4"
+      />
+
       <CarouselComponent />
 
       <SocialMedia />
 
-      
+      <Footer />
+
     </div>
   );
 };

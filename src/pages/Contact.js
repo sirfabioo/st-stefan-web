@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Contact.css';
 import SocialMedia from '../components/SocialMedia';
 import CustomNavbar from '../components/CustomNavbar';
+import Footer from '../components/Footer';
 
 const Contact = () => {
   return (
@@ -34,6 +35,7 @@ const Contact = () => {
           <SocialMedia />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

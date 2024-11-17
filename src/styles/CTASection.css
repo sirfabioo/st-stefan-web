@@ -2,15 +2,15 @@
   background-color: var(--secondary-color);
   color: white;
   text-align: center; /* Centers text and inline-block elements */
-  padding: 4rem;
+  padding: 4rem 2rem; /* Add horizontal padding for smaller screens */
 }
 
 .cta-section h2 {
   font-family: var(--font-headline);
   margin-bottom: 2rem;
+  font-size: 2rem; /* Adjust font size for responsiveness */
 }
 
-/* Centering the button */
 .cta-section .cta-btn {
   background-color: var(--tertiary-color);
   color: white;
@@ -20,9 +20,42 @@
   font-size: 1.25rem;
   display: inline-block; /* Ensures the button is treated as inline content */
   margin: 0 auto; /* Centers the button horizontally */
-  max-width: 50%;
+  max-width: 300px; /* Limits button width */
+  width: 100%; /* Ensures the button stretches fully on smaller screens */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .cta-section .cta-btn:hover {
   background-color: var(--secondary-color);
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 3rem 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem; /* Slightly smaller text for smaller screens */
+  }
+
+  .cta-section .cta-btn {
+    font-size: 1rem; /* Adjust button text size */
+    padding: 0.8rem 1.5rem; /* Reduce padding for smaller buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 2rem 1rem; /* Compact padding for very small screens */
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem; /* Even smaller text for tiny screens */
+  }
+
+  .cta-section .cta-btn {
+    font-size: 0.9rem; /* Compact button text */
+    padding: 0.6rem 1rem; /* Compact button size */
+  }
 }
