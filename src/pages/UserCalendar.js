@@ -37,7 +37,7 @@ const UserCalendar = () => {
     <div>
       <CustomNavbar />
       <div className="calendar-container">
-        <h2>School Calendar</h2>
+        <h2>Terminkalender</h2>
 
         {/* Dropdown for filtering */}
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
