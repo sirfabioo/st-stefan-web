@@ -33,9 +33,10 @@ const CustomNavbar = () => {
         <BSNavbar.Collapse id="navbar-responsive">
           <Nav className="ms-auto align-items-center">
             <Nav.Link as={Link} to="/schoolinfo">Schule</Nav.Link>
+            <Nav.Link as={Link} to="/teachers">Über uns</Nav.Link>
             <Nav.Link as={Link} to="/classes">Klassen</Nav.Link>
-            <Nav.Link as={Link} to="/teachers">Lehrer</Nav.Link>
             <Nav.Link as={Link} to="/blog">News</Nav.Link>
+            <Nav.Link as={Link} to="/calendar">Termine</Nav.Link>
             <Nav.Link as={Link} to="/gallery">Fotos</Nav.Link>
             <Nav.Link as={Link} to="/contact">Kontakt</Nav.Link>
             {isAuthenticated ? (

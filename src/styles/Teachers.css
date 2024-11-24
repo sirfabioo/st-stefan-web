@@ -20,6 +20,42 @@
   gap: 2rem;
 }
 
+.lehrer-foto {
+  max-width: 100%; /* Ensure the image doesn’t exceed the container width */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Removes extra spacing around the image */
+  margin: 0 auto; /* Center the image horizontally */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a soft shadow */
+  object-fit: cover; /* Ensures the image fills its container */
+  margin-bottom: 2rem;
+}
+
+.special-card {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.schulwart-section {
+  margin-top: 3rem;
+}
+
+.schulwart-heading {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.schulwart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
 /* Responsive grid adjustments */
 @media (max-width: 768px) {
   .teachers-grid {
@@ -133,4 +169,6 @@
   .teacher-short-bio {
     font-size: 0.85rem;
   }
+
+  
 }

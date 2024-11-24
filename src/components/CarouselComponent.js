@@ -20,7 +20,6 @@ const CarouselComponent = () => {
 
   return (
     <div className="carousel-container">
-      <h2 className="carousel-heading">Bilder aus dem Schulleben</h2> {/* Headline added */}
       {galleryImages.length > 0 ? (
         <Carousel interval={3000} fade>
           {galleryImages.map((image, index) => (

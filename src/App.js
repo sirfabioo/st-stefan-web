@@ -16,6 +16,9 @@ import Welcome from "./pages/Welcome.js";
 import BlogView from "./pages/BlogView.js";
 import Impressum from "./pages/Impressum.js";
 import Privacy from "./pages/Privacy.js";
+import UserCalendar from "./pages/UserCalendar.js";
+import AdminCalendar from "./pages/AdminCalendar.js";
+
 
 function App() {
   return (
@@ -37,6 +40,8 @@ function App() {
         <Route path="/admin/classes" element={<AdminClasses />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/calendar" element={<UserCalendar />} />
+        <Route path="/admin-calendar" element={<AdminCalendar />} />
       </Routes>
     </Router>
   );

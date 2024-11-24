@@ -36,7 +36,7 @@ const Welcome = () => {
         </div>
       </div>
 
-      <SchoolProgramShort />
+      {/* <SchoolProgramShort /> */}
 
       <BlogOverview />
 

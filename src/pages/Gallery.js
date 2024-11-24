@@ -32,7 +32,7 @@ const Gallery = () => {
     <div className="page-wrapper">
       <CustomNavbar />
       <div className="gallery-container">
-        <h2 className="gallery-heading">Bilder aus dem Schulleben</h2>
+        <h2 className="gallery-heading"></h2>
         <div className="gallery-grid">
           {images.map((image, index) => (
             <img

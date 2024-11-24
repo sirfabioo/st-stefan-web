@@ -1,8 +1,16 @@
 /* General Nav links styling */
+.navbar-nav {
+  margin: 0 auto !important; /* Centers the nav links in the navbar */
+  display: flex !important; /* Use flexbox for alignment */
+  justify-content: center !important; /* Ensure the links are centered */
+  align-items: center !important; /* Vertically align links */
+}
+
 .navbar-nav .nav-link {
   color: #424242; /* Custom dark color for text */
-  font-size: 1rem;
-  margin-right: 1rem; /* Adjust spacing between links */
+  font-size: 1.2rem !important;
+  margin-right: 1rem !important; /* Adjust spacing between links */
+  text-decoration: none !important; /* Remove underline from links */
 }
 
 .navbar-nav .nav-link:hover {
@@ -14,14 +22,15 @@
 .login-btn {
   background-color: var(--midpoint-red) !important;
   color: white !important;
-  border: none;
+  border: none !important;
   padding: 0.5rem 1rem !important;
-  border-radius: 5px;
-  margin-left: 1rem;
-  font-size: 0.9rem;
-  width: auto; /* Ensure the button is sized to fit its content */
-  max-width: 150px; /* Optional: Restrict maximum width */
-  text-align: center; /* Ensure text is centered */
+  border-radius: 5px !important;
+  font-size: 1.2rem !important;
+  width: auto !important; /* Ensure the button is sized to fit its content */
+  max-width: 150px !important; /* Optional: Restrict maximum width */
+  text-align: center !important; /* Ensure text is centered */
+  position: absolute !important; /* Position the button absolutely */
+  right: 1rem !important; /* Position it on the right side of the navbar */
 }
 
 .dashboard-btn:hover,
@@ -32,32 +41,24 @@
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
-  /* Ensure hamburger menu content aligns to the right */
-  .navbar-collapse {
-    text-align: right !important;
-  }
-
-  /* Align links and buttons to the right */
   .navbar-nav {
     flex-direction: column !important; /* Stack links vertically */
-    align-items: flex-end !important; /* Align links to the right */
-    gap: 0.5rem; /* Add spacing between links */
-    margin-left: auto !important; /* Push content to the right */
-    padding-right: 1rem; /* Add some padding to the right */
+    align-items: center !important; /* Center-align the links */
+    gap: 0.5rem !important; /* Add spacing between links */
   }
 
   .navbar-nav .nav-link {
-    margin: 0; /* Reset margin for clean alignment */
-    text-align: right; /* Right-align the text */
-    width: 100%; /* Optional: make links span full width for better tap targets */
+    margin: 0 !important; /* Reset margin for clean alignment */
+    text-align: center !important; /* Center-align the text */
+    width: 100% !important; /* Optional: make links span full width for better tap targets */
   }
 
   .dashboard-btn,
   .login-btn {
-    margin: 0 !important;
-    align-self: flex-end !important;
-    text-align: center;
-    width: auto; /* Prevent stretching */
-    max-width: 150px; /* Maintain consistent size */
+    position: static !important; /* Reset position for responsive behavior */
+    margin: 0 auto !important; /* Center button */
+    margin-top: 1rem !important; /* Add space above the button */
+    width: 100% !important; /* Make button full width for better touch targets */
+    max-width: none !important; /* Allow full width on smaller screens */
   }
 }

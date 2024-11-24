@@ -35,13 +35,16 @@ const Admin = () => {
         <div className="admin-links">
           <ul>
             <li>
-              <Link to="/create-blog" className="admin-link">Create or Edit a Blog Post</Link>
+              <Link to="/create-blog" className="admin-link">Blogeinträge</Link>
             </li>
             <li>
-              <Link to="/upload-gallery" className="admin-link">Upload Images to Gallery</Link>
+              <Link to="/upload-gallery" className="admin-link">Bilder hochladen und bearbeiten</Link>
             </li>
             <li>
-              <Link to="/admin/classes" className="admin-link">Manage Class Images</Link>
+              <Link to="/admin/classes" className="admin-link">Klassen bearbeiten</Link>
+            </li>
+            <li>
+              <Link to="/admin-calendar" className="admin-link">Terminkalender</Link>
             </li>
           </ul>
         </div>
